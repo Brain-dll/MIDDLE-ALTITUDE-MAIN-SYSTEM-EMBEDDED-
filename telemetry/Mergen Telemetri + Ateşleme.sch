@@ -23952,6 +23952,733 @@ LED</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Wurth_EMC Components_WE-TVSP" urn="urn:adsk.eagle:library:14283044">
+<description>&lt;BR&gt;Wurth Elektronik - EMC Components - Surge Protection - WE-TVSP&lt;br&gt;&lt;Hr&gt;
+
+&lt;BR&gt;
+&lt;TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0&gt;
+&lt;TR&gt;   
+&lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;BR&gt;&lt;br&gt;
+      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+&lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;br&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+    &lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt; &lt;FONT FACE=ARIAL SIZE=3&gt;&lt;br&gt;
+      ---------------------------&lt;BR&gt;
+&lt;B&gt;&lt;I&gt;&lt;span style='font-size:26pt;
+  color:#FF6600;'&gt;WE &lt;/span&gt;&lt;/i&gt;&lt;/b&gt;
+&lt;BR&gt;
+      ---------------------------&lt;BR&gt;&lt;b&gt;Würth Elektronik&lt;/b&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+    &lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;br&gt;
+      ---------O---&lt;BR&gt;
+      ----O--------&lt;BR&gt;
+      ---------O---&lt;BR&gt;
+      ----O--------&lt;BR&gt;
+      ---------O---&lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+   
+&lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;BR&gt;
+      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+  &lt;/TR&gt;
+
+  &lt;TR&gt;
+    &lt;TD COLSPAN=7&gt;&amp;nbsp;
+    &lt;/TD&gt;
+  &lt;/TR&gt;
+  
+&lt;/TABLE&gt;
+&lt;B&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;More than you expect&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;/B&gt;
+
+&lt;HR&gt;&lt;BR&gt;
+&lt;b&gt;Würth Elektronik eiSos GmbH &amp; Co. KG&lt;/b&gt;&lt;br&gt;
+EMC &amp; Inductive Solutions&lt;br&gt;
+
+Max-Eyth-Str.1&lt;br&gt;
+D-74638 Waldenburg&lt;br&gt;
+&lt;br&gt;
+Tel: +49 (0)7942-945-0&lt;br&gt;
+Fax:+49 (0)7942-945-5000&lt;br&gt;
+&lt;br&gt;
+&lt;a href="http://www.we-online.com/web/en/electronic_components/produkte_pb/bauteilebibliotheken/eagle_4.php"&gt;www.we-online.com/eagle&lt;/a&gt;&lt;br&gt;
+&lt;a href="mailto:libraries@we-online.com"&gt;libraries@we-online.com&lt;/a&gt; &lt;BR&gt;&lt;BR&gt;
+&lt;br&gt;&lt;HR&gt;&lt;BR&gt;
+Neither Autodesk nor Würth Elektronik eiSos does warrant that this library is error-free or &lt;br&gt;
+that it meets your specific requirements.&lt;br&gt;&lt;BR&gt;
+Please contact us for more information.&lt;br&gt;
+&lt;HR&gt;
+&lt;br&gt;Eagle Version 9, Library Revision 2020a, 2020-07-20&lt;br&gt;
+&lt;HR&gt;
+Copyright: Würth Elektronik</description>
+<packages>
+<package name="WE-TVSP_DO-214AC_UNIDIRECTIONAL" urn="urn:adsk.eagle:footprint:12146520/1" library_version="3">
+<description>&lt;b&gt;WE-TVSP Power TVS Diode
+&lt;br&gt;&lt;br&gt;&lt;/b&gt;DO-214AC Unidirectional</description>
+<smd name="1" x="-2.1" y="0" dx="2.3" dy="1.7" layer="1"/>
+<smd name="2" x="2.1" y="0" dx="2.3" dy="1.7" layer="1"/>
+<text x="0" y="1.94" size="0.8128" layer="25" align="bottom-center">&gt;NAME</text>
+<text x="-2.31" y="-2.81" size="0.8128" layer="27">&gt;VALUE</text>
+<wire x1="-0.635" y1="1.4" x2="-0.635" y2="-1.4" width="0.254" layer="21"/>
+<wire x1="-2.12" y1="1.335" x2="-2.12" y2="-1.335" width="0.1" layer="51"/>
+<wire x1="2.12" y1="-1.335" x2="2.12" y2="1.335" width="0.1" layer="51"/>
+<wire x1="2.22" y1="1.435" x2="-2.22" y2="1.435" width="0.2" layer="21"/>
+<wire x1="2.22" y1="1.2" x2="2.22" y2="1.435" width="0.2" layer="21"/>
+<wire x1="-2.12" y1="1.335" x2="2.12" y2="1.335" width="0.1" layer="51"/>
+<wire x1="-2.12" y1="-1.335" x2="2.12" y2="-1.335" width="0.1" layer="51"/>
+<wire x1="-2.22" y1="1.2" x2="-2.22" y2="1.435" width="0.2" layer="21"/>
+<wire x1="-2.22" y1="-1.435" x2="2.22" y2="-1.435" width="0.2" layer="21"/>
+<wire x1="-2.22" y1="-1.2" x2="-2.22" y2="-1.435" width="0.2" layer="21"/>
+<wire x1="2.22" y1="-1.2" x2="2.22" y2="-1.435" width="0.2" layer="21"/>
+<polygon width="0.1" layer="39">
+<vertex x="-3.5" y="1.635"/>
+<vertex x="3.5" y="1.635"/>
+<vertex x="3.5" y="-1.635"/>
+<vertex x="-3.5" y="-1.635"/>
+</polygon>
+</package>
+</packages>
+<packages3d>
+<package3d name="WE-TVSP_DO-214AC_UNIDIRECTIONAL" urn="urn:adsk.eagle:package:12146528/2" type="model" library_version="3">
+<description>&lt;b&gt;WE-TVSP Power TVS Diode
+&lt;br&gt;&lt;br&gt;&lt;/b&gt;DO-214AC Unidirectional</description>
+<packageinstances>
+<packageinstance name="WE-TVSP_DO-214AC_UNIDIRECTIONAL"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="UNIDIRECTIONAL" urn="urn:adsk.eagle:symbol:14283046/1" library_version="3">
+<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="A" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
+<text x="-1.27" y="2.54" size="1.27" layer="95" align="bottom-center">&gt;NAME</text>
+<text x="-5.08" y="-3.81" size="1.27" layer="96">&gt;VALUE</text>
+<polygon width="0.127" layer="94">
+<vertex x="-2.54" y="1.27"/>
+<vertex x="-2.54" y="-1.27"/>
+<vertex x="0" y="0"/>
+</polygon>
+<wire x1="-0.635" y1="-1.905" x2="0" y2="-1.27" width="0.127" layer="94"/>
+<wire x1="0" y1="-1.27" x2="0" y2="1.27" width="0.127" layer="94"/>
+<wire x1="0" y1="1.27" x2="0.635" y2="1.905" width="0.127" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="WE-TVSP_DO-214AC_400W_UNI" urn="urn:adsk.eagle:component:14283048/3" prefix="D" library_version="3">
+<description>&lt;b&gt; WE-TVSP Power TVS Diode
+&lt;br&gt;&lt;br&gt;
+Characteristics 
+&lt;br&gt;&lt;br&gt;&lt;/b&gt;Low Profile Package
+&lt;br&gt;Glass passivated Juction
+&lt;br&gt;Excellent clamping capability
+&lt;br&gt;Fast response time
+&lt;br&gt;MSL Level 1, per J-STD-020
+&lt;br&gt;Classification of the plastic case: UL 94 V-0
+&lt;br&gt;Safety certification UL 497B, E478010
+&lt;br&gt;Identical design: 
+&lt;br&gt; - DO-214AC = SMAJ 
+&lt;br&gt; - DO-214AA = SMBJ 
+&lt;br&gt; - DO-214AB = SMCJ/SMDJ
+&lt;br&gt;
+&lt;br&gt;&lt;b&gt;Applications 
+&lt;br&gt;&lt;br&gt;&lt;/b&gt;Ideal to protect the I/O Interfaces, Bus Voltage and other circuits of sensetive electronic equipment against voltage transiensts
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;a href="https://www.we-online.com/catalog/media/o55793v209%20WE-TVSP_600W-3000W_D0214AA_4C.jpg" title="Enlarge picture"&gt;
+&lt;img src="https://www.we-online.com/catalog/media/o55793v209%20WE-TVSP_600W-3000W_D0214AA_4C.jpg" width="320"&gt;&lt;/a&gt;&lt;p&gt;
+Details see: &lt;a href="https://www.we-online.com/catalog/en/WE-TVSP/"&gt;https://www.we-online.com/catalog/en/WE-TVSP/&lt;/a&gt;&lt;p&gt;
+Updated by Ella Wu 2020-07-20&lt;br&gt;
+2020 (C) Würth Elektronik</description>
+<gates>
+<gate name="G$1" symbol="UNIDIRECTIONAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="WE-TVSP_DO-214AC_UNIDIRECTIONAL">
+<connects>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="C" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:12146528/2"/>
+</package3dinstances>
+<technologies>
+<technology name="_824500101">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500101.pdf"/>
+<attribute name="IPEAK" value="23.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500101 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="10V"/>
+<attribute name="VBR" value="11.7V"/>
+<attribute name="VCLAMP" value="17V"/>
+</technology>
+<technology name="_824500102">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500102.pdf"/>
+<attribute name="IPEAK" value="2.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500102 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="100V"/>
+<attribute name="VBR" value="117V"/>
+<attribute name="VCLAMP" value="162V"/>
+</technology>
+<technology name="_824500111">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500111.pdf"/>
+<attribute name="IPEAK" value="22A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500111 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="11V"/>
+<attribute name="VBR" value="12.85V"/>
+<attribute name="VCLAMP" value="18.2V"/>
+</technology>
+<technology name="_824500112">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="2.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500112 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="110V"/>
+<attribute name="VBR" value="128.5V"/>
+<attribute name="VCLAMP" value="177V"/>
+</technology>
+<technology name="_824500121">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500121.pdf"/>
+<attribute name="IPEAK" value="20.1A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500121 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="12V"/>
+<attribute name="VBR" value="14V"/>
+<attribute name="VCLAMP" value="19.9V"/>
+</technology>
+<technology name="_824500122">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="2.1A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500122 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="120V"/>
+<attribute name="VBR" value="140V"/>
+<attribute name="VCLAMP" value="193V"/>
+</technology>
+<technology name="_824500131">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500131.pdf"/>
+<attribute name="IPEAK" value="18.6A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500131 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="13V"/>
+<attribute name="VBR" value="15.15V"/>
+<attribute name="VCLAMP" value="21.5V"/>
+</technology>
+<technology name="_824500132">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.9A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500132 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="130V"/>
+<attribute name="VBR" value="151.5V"/>
+<attribute name="VCLAMP" value="209V"/>
+</technology>
+<technology name="_824500141">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500141.pdf"/>
+<attribute name="IPEAK" value="17.2A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500141 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="14V"/>
+<attribute name="VBR" value="16.4V"/>
+<attribute name="VCLAMP" value="23.2V"/>
+</technology>
+<technology name="_824500151">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500151.pdf"/>
+<attribute name="IPEAK" value="16.4A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500151 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="15V"/>
+<attribute name="VBR" value="17.6V"/>
+<attribute name="VCLAMP" value="24.4V"/>
+</technology>
+<technology name="_824500152">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.6A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500152 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="150V"/>
+<attribute name="VBR" value="176V"/>
+<attribute name="VCLAMP" value="243V"/>
+</technology>
+<technology name="_824500161">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500161.pdf"/>
+<attribute name="IPEAK" value="15.4A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500161 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="16V"/>
+<attribute name="VBR" value="18.75V"/>
+<attribute name="VCLAMP" value="26V"/>
+</technology>
+<technology name="_824500162">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500162 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="160V"/>
+<attribute name="VBR" value="187.5V"/>
+<attribute name="VCLAMP" value="259V"/>
+</technology>
+<technology name="_824500171">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500171.pdf"/>
+<attribute name="IPEAK" value="14.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500171 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="17V"/>
+<attribute name="VBR" value="19.9V"/>
+<attribute name="VCLAMP" value="27.6V"/>
+</technology>
+<technology name="_824500172">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500172 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="170V"/>
+<attribute name="VBR" value="199V"/>
+<attribute name="VCLAMP" value="275V"/>
+</technology>
+<technology name="_824500181">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500181.pdf"/>
+<attribute name="IPEAK" value="13.7A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500181 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="18V"/>
+<attribute name="VBR" value="21.05V"/>
+<attribute name="VCLAMP" value="29.2V"/>
+</technology>
+<technology name="_824500182">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.4A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500182 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="180V"/>
+<attribute name="VBR" value="211.5V"/>
+<attribute name="VCLAMP" value="292V"/>
+</technology>
+<technology name="_824500192">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500192 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="190V"/>
+<attribute name="VBR" value="222V"/>
+<attribute name="VCLAMP" value="308V"/>
+</technology>
+<technology name="_824500201">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500201.pdf"/>
+<attribute name="IPEAK" value="12.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500201 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="20V"/>
+<attribute name="VBR" value="23.35V"/>
+<attribute name="VCLAMP" value="32.4V"/>
+</technology>
+<technology name="_824500202">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500202.pdf"/>
+<attribute name="IPEAK" value="1.2A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500202 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="200V"/>
+<attribute name="VBR" value="235.5V"/>
+<attribute name="VCLAMP" value="324V"/>
+</technology>
+<technology name="_824500212">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.2A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500212 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="210V"/>
+<attribute name="VBR" value="250V"/>
+<attribute name="VCLAMP" value="340V"/>
+</technology>
+<technology name="_824500221">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500221.pdf"/>
+<attribute name="IPEAK" value="11.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500221 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="22V"/>
+<attribute name="VBR" value="25.65V"/>
+<attribute name="VCLAMP" value="35.5V"/>
+</technology>
+<technology name="_824500222">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500222.pdf"/>
+<attribute name="IPEAK" value="1.1A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500222 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="220V"/>
+<attribute name="VBR" value="259V"/>
+<attribute name="VCLAMP" value="356V"/>
+</technology>
+<technology name="_824500241">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500241.pdf"/>
+<attribute name="IPEAK" value="10.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500241 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="24V"/>
+<attribute name="VBR" value="28.1V"/>
+<attribute name="VCLAMP" value="38.9V"/>
+</technology>
+<technology name="_824500252">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="1.0A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500252 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="250V"/>
+<attribute name="VBR" value="294V"/>
+<attribute name="VCLAMP" value="405V"/>
+</technology>
+<technology name="_824500261">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500261.pdf"/>
+<attribute name="IPEAK" value="9.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500261 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="26V"/>
+<attribute name="VBR" value="30.4V"/>
+<attribute name="VCLAMP" value="42.1V"/>
+</technology>
+<technology name="_824500281">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500281.pdf"/>
+<attribute name="IPEAK" value="8.8A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500281 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="28V"/>
+<attribute name="VBR" value="32.75V"/>
+<attribute name="VCLAMP" value="45.4V"/>
+</technology>
+<technology name="_824500301">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500301.pdf"/>
+<attribute name="IPEAK" value="8.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500301 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="30V"/>
+<attribute name="VBR" value="35.05V"/>
+<attribute name="VCLAMP" value="48.4V"/>
+</technology>
+<technology name="_824500302">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="0.8A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500302 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="300V"/>
+<attribute name="VBR" value="353V"/>
+<attribute name="VCLAMP" value="486V"/>
+</technology>
+<technology name="_824500331">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500331.pdf"/>
+<attribute name="IPEAK" value="7.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500331 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="33V"/>
+<attribute name="VBR" value="38.65V"/>
+<attribute name="VCLAMP" value="53.3V"/>
+</technology>
+<technology name="_824500352">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="0.7A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500352 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="350V"/>
+<attribute name="VBR" value="411.5V"/>
+<attribute name="VCLAMP" value="567V"/>
+</technology>
+<technology name="_824500361">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500361.pdf"/>
+<attribute name="IPEAK" value="6.9A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500361 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="36V"/>
+<attribute name="VBR" value="42.1V"/>
+<attribute name="VCLAMP" value="58.1V"/>
+</technology>
+<technology name="_824500401">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500401.pdf"/>
+<attribute name="IPEAK" value="6.2A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500401 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="40V"/>
+<attribute name="VBR" value="46.75V"/>
+<attribute name="VCLAMP" value="64.5V"/>
+</technology>
+<technology name="_824500402">
+<attribute name="DATASHEET-URL" value="-"/>
+<attribute name="IPEAK" value="0.6A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500402 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="400V"/>
+<attribute name="VBR" value="470.5V"/>
+<attribute name="VCLAMP" value="648V"/>
+</technology>
+<technology name="_824500431">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500431.pdf"/>
+<attribute name="IPEAK" value="5.8A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500431 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="43V"/>
+<attribute name="VBR" value="50.3V"/>
+<attribute name="VCLAMP" value="69.4V"/>
+</technology>
+<technology name="_824500442">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500442.pdf"/>
+<attribute name="IPEAK" value="0.6A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500442 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="440V"/>
+<attribute name="VBR" value="517.5V"/>
+<attribute name="VCLAMP" value="713V"/>
+</technology>
+<technology name="_824500451">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500451.pdf"/>
+<attribute name="IPEAK" value="5.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500451 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="45V"/>
+<attribute name="VBR" value="52.65V"/>
+<attribute name="VCLAMP" value="72.7V"/>
+</technology>
+<technology name="_824500481">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500481.pdf"/>
+<attribute name="IPEAK" value="5.2A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500481 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="48V"/>
+<attribute name="VBR" value="56.1V"/>
+<attribute name="VCLAMP" value="77.4V"/>
+</technology>
+<technology name="_824500500">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500500.pdf"/>
+<attribute name="IPEAK" value="43.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500500 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="5V"/>
+<attribute name="VBR" value="6.7V"/>
+<attribute name="VCLAMP" value="9.2V"/>
+</technology>
+<technology name="_824500511">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500511.pdf"/>
+<attribute name="IPEAK" value="4.9A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500511 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="51V"/>
+<attribute name="VBR" value="59.7V"/>
+<attribute name="VCLAMP" value="82.4V"/>
+</technology>
+<technology name="_824500541">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500541.pdf"/>
+<attribute name="IPEAK" value="4.6A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500541 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="54V"/>
+<attribute name="VBR" value="63.15V"/>
+<attribute name="VCLAMP" value="87.1V"/>
+</technology>
+<technology name="_824500581">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500581.pdf"/>
+<attribute name="IPEAK" value="4.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500581 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="58V"/>
+<attribute name="VBR" value="67.8V"/>
+<attribute name="VCLAMP" value="93.6V"/>
+</technology>
+<technology name="_824500600">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500600.pdf"/>
+<attribute name="IPEAK" value="38.8A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500600 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="6V"/>
+<attribute name="VBR" value="7.02V"/>
+<attribute name="VCLAMP" value="10.3V"/>
+</technology>
+<technology name="_824500601">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500601.pdf"/>
+<attribute name="IPEAK" value="4.1A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500601 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="60V"/>
+<attribute name="VBR" value="70.2V"/>
+<attribute name="VCLAMP" value="96.8V"/>
+</technology>
+<technology name="_824500641">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500641.pdf"/>
+<attribute name="IPEAK" value="3.9A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500641 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="64V"/>
+<attribute name="VBR" value="74.85V"/>
+<attribute name="VCLAMP" value="103V"/>
+</technology>
+<technology name="_824500650">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500650.pdf"/>
+<attribute name="IPEAK" value="35.7A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500650 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="6.5V"/>
+<attribute name="VBR" value="7.6V"/>
+<attribute name="VCLAMP" value="11.2V"/>
+</technology>
+<technology name="_824500700">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500700.pdf"/>
+<attribute name="IPEAK" value="33.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500700 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="7V"/>
+<attribute name="VBR" value="8.19V"/>
+<attribute name="VCLAMP" value="12V"/>
+</technology>
+<technology name="_824500701">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500701.pdf"/>
+<attribute name="IPEAK" value="3.5A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500701 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="70V"/>
+<attribute name="VBR" value="81.9V"/>
+<attribute name="VCLAMP" value="113V"/>
+</technology>
+<technology name="_824500750">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500750.pdf"/>
+<attribute name="IPEAK" value="31A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500750 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="7.5V"/>
+<attribute name="VBR" value="8.77V"/>
+<attribute name="VCLAMP" value="12.9V"/>
+</technology>
+<technology name="_824500751">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500751.pdf"/>
+<attribute name="IPEAK" value="3.3A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500751 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="75V"/>
+<attribute name="VBR" value="87.7V"/>
+<attribute name="VCLAMP" value="121V"/>
+</technology>
+<technology name="_824500781">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500781.pdf"/>
+<attribute name="IPEAK" value="3.2A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500781 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="78V"/>
+<attribute name="VBR" value="91.25V"/>
+<attribute name="VCLAMP" value="126V"/>
+</technology>
+<technology name="_824500800">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500800.pdf"/>
+<attribute name="IPEAK" value="29.4A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500800 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="8V"/>
+<attribute name="VBR" value="9.36V"/>
+<attribute name="VCLAMP" value="13.6V"/>
+</technology>
+<technology name="_824500850">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500850.pdf"/>
+<attribute name="IPEAK" value="27.8A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500850 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="8.5V"/>
+<attribute name="VBR" value="9.92V"/>
+<attribute name="VCLAMP" value="14.4V"/>
+</technology>
+<technology name="_824500851">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500851.pdf"/>
+<attribute name="IPEAK" value="2.9A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500851 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="85V"/>
+<attribute name="VBR" value="99.2V"/>
+<attribute name="VCLAMP" value="137V"/>
+</technology>
+<technology name="_824500900">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500900.pdf"/>
+<attribute name="IPEAK" value="26A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500900 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="9V"/>
+<attribute name="VBR" value="10.55V"/>
+<attribute name="VCLAMP" value="15.4V"/>
+</technology>
+<technology name="_824500901">
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/824500901.pdf"/>
+<attribute name="IPEAK" value="2.7A"/>
+<attribute name="MOUNT" value="SMT"/>
+<attribute name="PART-NUMBER" value=" 824500901 "/>
+<attribute name="PDISS" value="400W"/>
+<attribute name="VALUE" value="90V"/>
+<attribute name="VBR" value="105.5V"/>
+<attribute name="VCLAMP" value="146V"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -24101,6 +24828,9 @@ LED</description>
 <part name="R20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="0R"/>
 <part name="C25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402K" package3d_urn="urn:adsk.eagle:package:23679/2" value="0.1uF"/>
 <part name="C28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402K" package3d_urn="urn:adsk.eagle:package:23679/2" value="0.1uF"/>
+<part name="ESDA" library="Wurth_EMC Components_WE-TVSP" library_urn="urn:adsk.eagle:library:14283044" deviceset="WE-TVSP_DO-214AC_400W_UNI" device="" package3d_urn="urn:adsk.eagle:package:12146528/2" technology="_824500102" value="12V"/>
+<part name="ESDA1" library="Wurth_EMC Components_WE-TVSP" library_urn="urn:adsk.eagle:library:14283044" deviceset="WE-TVSP_DO-214AC_400W_UNI" device="" package3d_urn="urn:adsk.eagle:package:12146528/2" technology="_824500102" value="12V"/>
+<part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="680"/>
 </parts>
 <sheets>
 <sheet>
@@ -24372,9 +25102,9 @@ PCB: 0.8mm
 <instance part="GND28" gate="1" x="152.908" y="1.524" smashed="yes">
 <attribute name="VALUE" x="147.828" y="-1.016" size="1.778" layer="96"/>
 </instance>
-<instance part="R10" gate="G$1" x="124.968" y="21.844" smashed="yes">
-<attribute name="NAME" x="121.158" y="23.3426" size="1.778" layer="95"/>
-<attribute name="VALUE" x="121.158" y="18.542" size="1.778" layer="96"/>
+<instance part="R10" gate="G$1" x="114.808" y="21.844" smashed="yes">
+<attribute name="NAME" x="110.998" y="23.3426" size="1.778" layer="95"/>
+<attribute name="VALUE" x="110.998" y="18.542" size="1.778" layer="96"/>
 </instance>
 <instance part="P+17" gate="VCC" x="-91.44" y="78.74" smashed="yes">
 <attribute name="VALUE" x="-88.9" y="81.28" size="1.778" layer="96" rot="R180"/>
@@ -24484,9 +25214,9 @@ PCB: 0.8mm
 <instance part="GND29" gate="1" x="152.908" y="-49.276" smashed="yes">
 <attribute name="VALUE" x="147.828" y="-51.816" size="1.778" layer="96"/>
 </instance>
-<instance part="R14" gate="G$1" x="124.968" y="-28.956" smashed="yes">
-<attribute name="NAME" x="121.158" y="-27.4574" size="1.778" layer="95"/>
-<attribute name="VALUE" x="121.158" y="-32.258" size="1.778" layer="96"/>
+<instance part="R14" gate="G$1" x="114.808" y="-28.956" smashed="yes">
+<attribute name="NAME" x="110.998" y="-27.4574" size="1.778" layer="95"/>
+<attribute name="VALUE" x="110.998" y="-32.258" size="1.778" layer="96"/>
 </instance>
 <instance part="R15" gate="G$1" x="132.08" y="-38.1" smashed="yes" rot="R90">
 <attribute name="NAME" x="130.5814" y="-41.91" size="1.778" layer="95" rot="R90"/>
@@ -24639,6 +25369,18 @@ PCB: 0.8mm
 <instance part="C28" gate="G$1" x="83.82" y="114.3" smashed="yes">
 <attribute name="NAME" x="82.804" y="114.681" size="1.778" layer="95"/>
 <attribute name="VALUE" x="80.264" y="109.601" size="1.778" layer="96"/>
+</instance>
+<instance part="ESDA" gate="G$1" x="124.46" y="15.24" smashed="yes" rot="R90">
+<attribute name="NAME" x="121.92" y="13.97" size="1.27" layer="95" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="128.27" y="10.16" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="ESDA1" gate="G$1" x="124.46" y="-35.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="121.92" y="-36.83" size="1.27" layer="95" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="128.27" y="-40.64" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="R21" gate="G$1" x="-78.74" y="-81.28" smashed="yes" rot="R270">
+<attribute name="NAME" x="-77.2414" y="-77.47" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-82.042" y="-77.47" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -24896,6 +25638,10 @@ PCB: 0.8mm
 <wire x1="140.208" y1="7.62" x2="152.908" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="140.208" y1="19.304" x2="140.208" y2="7.62" width="0.1524" layer="91"/>
 <junction x="140.208" y="7.62"/>
+<pinref part="ESDA" gate="G$1" pin="A"/>
+<wire x1="124.46" y1="10.16" x2="124.46" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="7.62" x2="132.08" y2="7.62" width="0.1524" layer="91"/>
+<junction x="132.08" y="7.62"/>
 </segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="GND@4"/>
@@ -24958,6 +25704,10 @@ PCB: 0.8mm
 <wire x1="140.208" y1="-43.18" x2="152.908" y2="-43.18" width="0.1524" layer="91"/>
 <wire x1="140.208" y1="-31.496" x2="140.208" y2="-43.18" width="0.1524" layer="91"/>
 <junction x="140.208" y="-43.18"/>
+<pinref part="ESDA1" gate="G$1" pin="A"/>
+<wire x1="124.46" y1="-40.64" x2="124.46" y2="-43.18" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="-43.18" x2="132.08" y2="-43.18" width="0.1524" layer="91"/>
+<junction x="132.08" y="-43.18"/>
 </segment>
 <segment>
 <pinref part="C23" gate="G$1" pin="2"/>
@@ -25064,17 +25814,14 @@ PCB: 0.8mm
 </net>
 <net name="FN" class="0">
 <segment>
-<pinref part="U4" gate="G$1" pin="FORCE_ON"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="-68.58" y1="-76.2" x2="-71.12" y2="-76.2" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="-76.2" x2="-73.66" y2="-76.2" width="0.1524" layer="91"/>
-<junction x="-71.12" y="-76.2"/>
-<label x="-73.66" y="-76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="U1" gate="A" pin="PC13"/>
 <wire x1="66.04" y1="43.18" x2="71.12" y2="43.18" width="0.1524" layer="91"/>
 <label x="71.12" y="43.18" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R21" gate="G$1" pin="2"/>
+<wire x1="-78.74" y1="-86.36" x2="-78.74" y2="-88.9" width="0.1524" layer="91"/>
+<label x="-78.74" y="-88.9" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -25308,16 +26055,20 @@ PCB: 0.8mm
 <wire x1="135.128" y1="21.844" x2="132.08" y2="21.844" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="21.844" x2="130.048" y2="21.844" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="21.844" x2="124.46" y2="21.844" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="21.844" x2="119.888" y2="21.844" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="17.78" x2="132.08" y2="21.844" width="0.1524" layer="91"/>
 <junction x="132.08" y="21.844"/>
+<pinref part="ESDA" gate="G$1" pin="C"/>
+<wire x1="124.46" y1="17.78" x2="124.46" y2="21.844" width="0.1524" layer="91"/>
+<junction x="124.46" y="21.844"/>
 </segment>
 </net>
 <net name="MAIN_F" class="0">
 <segment>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="119.888" y1="21.844" x2="117.348" y2="21.844" width="0.1524" layer="91"/>
-<label x="117.348" y="21.844" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="109.728" y1="21.844" x2="107.188" y2="21.844" width="0.1524" layer="91"/>
+<label x="107.188" y="21.844" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="PA7"/>
@@ -25328,8 +26079,8 @@ PCB: 0.8mm
 <net name="APG_F" class="0">
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
-<wire x1="119.888" y1="-28.956" x2="117.348" y2="-28.956" width="0.1524" layer="91"/>
-<label x="117.348" y="-28.956" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="109.728" y1="-28.956" x2="107.188" y2="-28.956" width="0.1524" layer="91"/>
+<label x="107.188" y="-28.956" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="PA5"/>
@@ -25591,9 +26342,13 @@ PCB: 0.8mm
 <wire x1="135.128" y1="-28.956" x2="132.08" y2="-28.956" width="0.1524" layer="91"/>
 <pinref part="R14" gate="G$1" pin="2"/>
 <pinref part="R15" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="-28.956" x2="130.048" y2="-28.956" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-28.956" x2="124.46" y2="-28.956" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="-28.956" x2="119.888" y2="-28.956" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="-33.02" x2="132.08" y2="-28.956" width="0.1524" layer="91"/>
 <junction x="132.08" y="-28.956"/>
+<pinref part="ESDA1" gate="G$1" pin="C"/>
+<wire x1="124.46" y1="-33.02" x2="124.46" y2="-28.956" width="0.1524" layer="91"/>
+<junction x="124.46" y="-28.956"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -25786,6 +26541,16 @@ PCB: 0.8mm
 <pinref part="U1" gate="A" pin="PB5"/>
 <wire x1="5.08" y1="-12.7" x2="0" y2="-12.7" width="0.1524" layer="91"/>
 <label x="0" y="-12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="R21" gate="G$1" pin="1"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="-78.74" y1="-76.2" x2="-71.12" y2="-76.2" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="FORCE_ON"/>
+<wire x1="-71.12" y1="-76.2" x2="-68.58" y2="-76.2" width="0.1524" layer="91"/>
+<junction x="-71.12" y="-76.2"/>
 </segment>
 </net>
 </nets>
