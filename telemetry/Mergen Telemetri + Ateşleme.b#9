@@ -202,6 +202,9 @@
 <hole x="4.826" y="-1.5" drill="3.5"/>
 <hole x="22.2758" y="-1.5" drill="3.5"/>
 <hole x="26.25" y="70.5" drill="2.5"/>
+<text x="52.4256" y="26.416" size="1.778" layer="21" rot="R90">  MERGEN
+09.03.2021</text>
+<text x="15.748" y="43.4594" size="2.54" layer="21">EPHEMERIS</text>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -3381,15 +3384,14 @@ design rules under a new name.</description>
 <wire x1="17.904" y1="77.978" x2="17.8358" y2="77.9098" width="0.2286" layer="1"/>
 <wire x1="17.8358" y1="77.9098" x2="13.7414" y2="77.9098" width="0.2286" layer="1"/>
 <contactref element="U1" pad="2"/>
-<wire x1="17.904" y1="77.978" x2="19.4056" y2="77.978" width="0.2286" layer="1"/>
-<wire x1="20.193" y1="52.6542" x2="22.987" y2="49.8602" width="0.2286" layer="1"/>
-<wire x1="22.987" y1="49.8602" x2="25.5778" y2="49.8602" width="0.2286" layer="1"/>
-<wire x1="25.5778" y1="49.8602" x2="25.6032" y2="49.8856" width="0.2286" layer="1"/>
-<via x="25.6032" y="49.8856" extent="1-16" drill="0.35"/>
-<wire x1="25.6032" y1="49.8856" x2="25.944" y2="49.5448" width="0.2286" layer="16"/>
-<wire x1="25.944" y1="49.5448" x2="25.944" y2="48.714" width="0.2286" layer="16"/>
-<wire x1="19.4056" y1="77.978" x2="20.193" y2="77.1906" width="0.2286" layer="1"/>
-<wire x1="20.193" y1="77.1906" x2="20.193" y2="52.6542" width="0.2286" layer="1"/>
+<wire x1="17.904" y1="77.978" x2="18.7198" y2="77.978" width="0.2286" layer="1"/>
+<wire x1="18.7198" y1="77.978" x2="20.5232" y2="76.1746" width="0.2286" layer="1"/>
+<wire x1="22.6314" y1="49.784" x2="25.5386" y2="49.784" width="0.2286" layer="1"/>
+<via x="25.5386" y="49.784" extent="1-16" drill="0.35"/>
+<wire x1="25.5386" y1="49.784" x2="25.944" y2="49.3786" width="0.2286" layer="16"/>
+<wire x1="25.944" y1="49.3786" x2="25.944" y2="48.714" width="0.2286" layer="16"/>
+<wire x1="20.5232" y1="76.1746" x2="20.5232" y2="51.8922" width="0.2286" layer="1"/>
+<wire x1="20.5232" y1="51.8922" x2="22.6314" y2="49.784" width="0.2286" layer="1"/>
 </signal>
 <signal name="N$18">
 <contactref element="U1" pad="22"/>
@@ -3799,10 +3801,10 @@ design rules under a new name.</description>
 <contactref element="VDDA2" pad="1"/>
 <contactref element="VDDA1" pad="1"/>
 <contactref element="U1" pad="9"/>
-<wire x1="29.444" y1="48.714" x2="29.444" y2="49.2814" width="0.2286" layer="16"/>
-<wire x1="29.444" y1="49.2814" x2="30.4038" y2="50.2412" width="0.2286" layer="16"/>
-<wire x1="34.1004" y1="49.7078" x2="33.567" y2="50.2412" width="0.2286" layer="16"/>
-<wire x1="33.567" y1="50.2412" x2="30.4038" y2="50.2412" width="0.2286" layer="16"/>
+<wire x1="29.444" y1="48.714" x2="29.444" y2="49.6116" width="0.2286" layer="16"/>
+<wire x1="29.444" y1="49.6116" x2="30.3276" y2="50.4952" width="0.2286" layer="16"/>
+<wire x1="34.1004" y1="49.7078" x2="33.313" y2="50.4952" width="0.2286" layer="16"/>
+<wire x1="33.313" y1="50.4952" x2="30.3276" y2="50.4952" width="0.2286" layer="16"/>
 <wire x1="34.1004" y1="51.2318" x2="34.1004" y2="49.7078" width="0.2286" layer="16"/>
 <wire x1="34.3004" y1="52.5018" x2="34.3004" y2="51.4318" width="0.2286" layer="16"/>
 <wire x1="34.3004" y1="51.4318" x2="34.1004" y2="51.2318" width="0.2286" layer="16"/>
@@ -3824,9 +3826,9 @@ design rules under a new name.</description>
 <contactref element="U1" pad="7"/>
 <contactref element="C23" pad="1"/>
 <wire x1="28.444" y1="48.714" x2="28.444" y2="49.272" width="0.2286" layer="16"/>
-<wire x1="28.444" y1="49.272" x2="29.9308" y2="50.7588" width="0.2286" layer="16"/>
-<wire x1="32.3342" y1="50.7588" x2="29.9308" y2="50.7588" width="0.2286" layer="16"/>
-<wire x1="32.3342" y1="50.7588" x2="32.8422" y2="51.2668" width="0.2286" layer="16"/>
+<wire x1="28.444" y1="49.272" x2="30.5658" y2="51.3938" width="0.2286" layer="16"/>
+<wire x1="32.8422" y1="51.2668" x2="32.7152" y2="51.3938" width="0.2286" layer="16"/>
+<wire x1="32.7152" y1="51.3938" x2="30.5658" y2="51.3938" width="0.2286" layer="16"/>
 </signal>
 <signal name="BT0">
 <contactref element="U1" pad="44"/>
@@ -3962,10 +3964,9 @@ design rules under a new name.</description>
 <wire x1="16.3638" y1="40.71" x2="15.9004" y2="41.1734" width="0.1524" layer="16"/>
 <via x="15.9004" y="41.1734" extent="1-16" drill="0.35"/>
 <via x="22.5414" y="42.51866875" extent="1-16" drill="0.35"/>
-<wire x1="20.88346875" y1="42.1386" x2="21.2635375" y2="42.51866875" width="0.1524" layer="1"/>
-<wire x1="21.2635375" y1="42.51866875" x2="22.5414" y2="42.51866875" width="0.1524" layer="1"/>
-<wire x1="15.9004" y1="41.1734" x2="16.8656" y2="42.1386" width="0.1524" layer="1"/>
-<wire x1="16.8656" y1="42.1386" x2="20.88346875" y2="42.1386" width="0.1524" layer="1"/>
+<wire x1="22.5414" y1="42.51866875" x2="22.5414" y2="42.50113125" width="0.1524" layer="1"/>
+<wire x1="22.5414" y1="42.50113125" x2="21.21366875" y2="41.1734" width="0.1524" layer="1"/>
+<wire x1="15.9004" y1="41.1734" x2="21.21366875" y2="41.1734" width="0.1524" layer="1"/>
 <wire x1="22.5414" y1="42.51866875" x2="23.16386875" y2="42.51866875" width="0.1524" layer="16"/>
 <wire x1="23.5458" y1="42.9006" x2="23.5458" y2="43.4848" width="0.1524" layer="16"/>
 <wire x1="23.5458" y1="43.4848" x2="24.023" y2="43.962" width="0.1524" layer="16"/>
@@ -3980,12 +3981,12 @@ design rules under a new name.</description>
 <wire x1="17.6206" y1="47.8806" x2="17.4473125" y2="47.8806" width="0.1524" layer="16"/>
 <wire x1="16.7853125" y1="47.2186" x2="16.7132" y2="47.2186" width="0.1524" layer="16"/>
 <wire x1="17.4473125" y1="47.8806" x2="16.7853125" y2="47.2186" width="0.1524" layer="16"/>
-<wire x1="16.7132" y1="47.2186" x2="18.8468" y2="45.085" width="0.1524" layer="1"/>
-<wire x1="22.8414" y1="45.085" x2="23.5204" y2="44.406" width="0.1524" layer="1"/>
+<wire x1="16.7132" y1="47.2186" x2="18.923" y2="45.0088" width="0.1524" layer="1"/>
+<wire x1="22.9176" y1="45.0088" x2="23.5204" y2="44.406" width="0.1524" layer="1"/>
 <via x="23.5204" y="44.406" extent="1-16" drill="0.35"/>
 <wire x1="23.5204" y1="44.406" x2="23.5764" y2="44.462" width="0.1524" layer="16"/>
 <wire x1="23.5764" y1="44.462" x2="24.692" y2="44.462" width="0.1524" layer="16"/>
-<wire x1="18.8468" y1="45.085" x2="22.8414" y2="45.085" width="0.1524" layer="1"/>
+<wire x1="18.923" y1="45.0088" x2="22.9176" y2="45.0088" width="0.1524" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
@@ -3998,6 +3999,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
