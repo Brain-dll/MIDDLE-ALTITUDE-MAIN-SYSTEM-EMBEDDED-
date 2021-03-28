@@ -14705,6 +14705,113 @@ Warning: This is the KIT version of the AXIAL-0.3 package. This package has a sm
 </deviceset>
 </devicesets>
 </library>
+<library name="Rembrandt Electronics - JST XH Connectors v1-0">
+<packages>
+<package name="JST-XH-04-PACKAGE-LONG-PAD">
+<description>&lt;b&gt;JST XH Connector Long Pads (Package)&lt;/b&gt;&lt;p&gt;
+Wire to board connector.
+
+Pitch: 2,54 mm, (0.100")&lt;p&gt;
+Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
+
+&lt;b&gt;Created by Rembrandt Electronics&lt;/b&gt;&lt;p&gt;
+&lt;b&gt;www.rembrandtelectronics.com&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="6.2" y1="-2.3575" x2="6.2" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="6.2" y1="3.3925" x2="-6.2" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="-6.2" y1="3.3925" x2="-6.2" y2="-2.3575" width="0.254" layer="21"/>
+<wire x1="-6.2" y1="-2.3575" x2="6.2" y2="-2.3575" width="0.254" layer="21"/>
+<pad name="3" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="1" x="-3.81" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="4" x="3.81" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-6.655" y="-2.04" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-6.0025" y="3.8925" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-5.4675" y="-1.4875" size="1.016" layer="51" ratio="10">1</text>
+<wire x1="-3.8" y1="-2.3" x2="-3.8" y2="-1.8" width="0.254" layer="21"/>
+<wire x1="3.9" y1="-2.3" x2="3.9" y2="-1.8" width="0.254" layer="21"/>
+</package>
+<package name="JST-XH-04-PACKAGE-ROUND-PAD">
+<description>&lt;b&gt;JST XH Connector Round Pads (Package)&lt;/b&gt;&lt;p&gt;
+
+Wire to board connector.
+
+Pitch: 2,54 mm, (0.100")&lt;p&gt;
+Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
+
+&lt;b&gt;Created by Rembrandt Electronics&lt;/b&gt;&lt;p&gt;
+&lt;b&gt;www.rembrandtelectronics.com&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="6.2" y1="-2.3575" x2="6.2" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="6.2" y1="3.3925" x2="-6.2" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="-6.2" y1="3.3925" x2="-6.2" y2="-2.3575" width="0.254" layer="21"/>
+<wire x1="-6.2" y1="-2.3575" x2="6.2" y2="-2.3575" width="0.254" layer="21"/>
+<pad name="3" x="1.27" y="0" drill="1.016" rot="R90"/>
+<pad name="2" x="-1.27" y="0" drill="1.016" rot="R90"/>
+<pad name="1" x="-3.81" y="0" drill="1.016" rot="R90"/>
+<pad name="4" x="3.81" y="0" drill="1.016" rot="R90"/>
+<text x="-6.655" y="-2.04" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-6.0025" y="3.8925" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-5.4675" y="-1.4875" size="1.016" layer="51" ratio="10">1</text>
+<wire x1="-3.8" y1="-2.3" x2="-3.8" y2="-1.8" width="0.254" layer="21"/>
+<wire x1="3.9" y1="-2.3" x2="3.9" y2="-1.8" width="0.254" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MV">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<text x="-0.762" y="1.397" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="M">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="JST-XH-04-PIN" prefix="X">
+<description>&lt;b&gt;JST XH Connector 2 Pin&lt;/b&gt;&lt;p&gt;
+
+Wire to board connector.
+
+Pitch: 2,54 mm, (0.100")&lt;p&gt;
+Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
+
+&lt;b&gt;Created by Rembrandt Electronics&lt;/b&gt;&lt;p&gt;
+&lt;b&gt;www.rembrandtelectronics.com&lt;/b&gt;&lt;p&gt;</description>
+<gates>
+<gate name="-1" symbol="MV" x="2.54" y="0" addlevel="always" swaplevel="1"/>
+<gate name="-2" symbol="M" x="2.54" y="-2.54" addlevel="always" swaplevel="1"/>
+<gate name="-3" symbol="M" x="2.54" y="-5.08" addlevel="always" swaplevel="1"/>
+<gate name="-4" symbol="M" x="2.54" y="-7.62" addlevel="always" swaplevel="1"/>
+</gates>
+<devices>
+<device name="-LONG-PAD" package="JST-XH-04-PACKAGE-LONG-PAD">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
+<connect gate="-4" pin="S" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-ROUND-PAD" package="JST-XH-04-PACKAGE-ROUND-PAD">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
+<connect gate="-4" pin="S" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14777,16 +14884,13 @@ Warning: This is the KIT version of the AXIAL-0.3 package. This package has a sm
 <part name="GND37" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="ESDA" library="Wurth_EMC Components_WE-TVSP" library_urn="urn:adsk.eagle:library:14283044" deviceset="WE-TVSP_DO-214AC_400W_UNI" device="" package3d_urn="urn:adsk.eagle:package:12146528/2" technology="_824500102" value="12V"/>
 <part name="ESDA1" library="Wurth_EMC Components_WE-TVSP" library_urn="urn:adsk.eagle:library:14283044" deviceset="WE-TVSP_DO-214AC_400W_UNI" device="" package3d_urn="urn:adsk.eagle:package:12146528/2" technology="_824500102" value="12V"/>
-<part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY17" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="5V" device=""/>
 <part name="C29" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="CPOL-US" device="150CLZ-1010" package3d_urn="urn:adsk.eagle:package:6240454/1" value="1000uF"/>
 <part name="C26" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="CPOL-US" device="150CLZ-1010" package3d_urn="urn:adsk.eagle:package:6240454/1" value="1000uF"/>
 <part name="GND38" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="JST-PTH-VERT" package3d_urn="urn:adsk.eagle:package:38102/1"/>
 <part name="D8" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:27167846" deviceset="LED" device="0603" package3d_urn="urn:adsk.eagle:package:27167834/2"/>
 <part name="GND40" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND41" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U1" library="STM32F303" deviceset="STM32F303CCT6" device=""/>
 <part name="SUPPLY13" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY14" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
@@ -14872,6 +14976,9 @@ Warning: This is the KIT version of the AXIAL-0.3 package. This package has a sm
 <part name="R30" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="1KOHM" device="-0603-1/10W-1%" package3d_urn="urn:adsk.eagle:package:39650/1" value="20"/>
 <part name="R11" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="1KOHM" device="-0603-1/10W-1%" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k"/>
 <part name="SUPPLY21" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
+<part name="X1" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-04-PIN" device="-LONG-PAD"/>
+<part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND23" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15130,9 +15237,6 @@ PCB: 0.8mm
 <attribute name="NAME" x="121.92" y="-36.83" size="1.27" layer="95" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="128.27" y="-40.64" size="1.27" layer="96" rot="R90"/>
 </instance>
-<instance part="GND10" gate="1" x="-129.54" y="60.96" smashed="yes">
-<attribute name="VALUE" x="-132.08" y="58.42" size="1.778" layer="96"/>
-</instance>
 <instance part="SUPPLY17" gate="G$1" x="68.58" y="-63.5" smashed="yes">
 <attribute name="VALUE" x="68.58" y="-60.706" size="1.778" layer="96" align="bottom-center"/>
 </instance>
@@ -15147,10 +15251,6 @@ PCB: 0.8mm
 <instance part="GND38" gate="1" x="68.58" y="-83.82" smashed="yes">
 <attribute name="VALUE" x="66.04" y="-86.36" size="1.778" layer="96"/>
 </instance>
-<instance part="J1" gate="G$1" x="-137.16" y="66.04" smashed="yes">
-<attribute name="VALUE" x="-142.24" y="58.674" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="-142.24" y="74.168" size="1.778" layer="95" font="vector"/>
-</instance>
 <instance part="D8" gate="G$1" x="5.08" y="-76.2" smashed="yes">
 <attribute name="NAME" x="1.651" y="-80.772" size="1.778" layer="95" font="vector" rot="R90"/>
 <attribute name="VALUE" x="6.985" y="-80.772" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
@@ -15160,9 +15260,6 @@ PCB: 0.8mm
 </instance>
 <instance part="GND41" gate="1" x="38.1" y="-81.28" smashed="yes">
 <attribute name="VALUE" x="35.56" y="-83.82" size="1.778" layer="96"/>
-</instance>
-<instance part="GND2" gate="1" x="-129.54" y="76.2" smashed="yes" rot="R180">
-<attribute name="VALUE" x="-127" y="78.74" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="U1" gate="A" x="7.62" y="45.72" smashed="yes">
 <attribute name="NAME" x="33.3756" y="54.8386" size="2.0828" layer="95" ratio="6" rot="SR0"/>
@@ -15482,6 +15579,25 @@ PCB: 0.8mm
 <instance part="SUPPLY21" gate="G$1" x="208.28" y="22.86" smashed="yes">
 <attribute name="VALUE" x="208.28" y="25.654" size="1.778" layer="96" align="bottom-center"/>
 </instance>
+<instance part="X1" gate="-1" x="-99.06" y="104.14" smashed="yes" rot="R180">
+<attribute name="NAME" x="-101.6" y="104.902" size="1.524" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-98.298" y="102.743" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="X1" gate="-2" x="-99.06" y="106.68" smashed="yes" rot="R180">
+<attribute name="NAME" x="-101.6" y="107.442" size="1.524" layer="95" rot="R180"/>
+</instance>
+<instance part="X1" gate="-3" x="-99.06" y="109.22" smashed="yes" rot="R180">
+<attribute name="NAME" x="-101.6" y="109.982" size="1.524" layer="95" rot="R180"/>
+</instance>
+<instance part="X1" gate="-4" x="-99.06" y="111.76" smashed="yes" rot="R180">
+<attribute name="NAME" x="-101.6" y="112.522" size="1.524" layer="95" rot="R180"/>
+</instance>
+<instance part="GND21" gate="1" x="-93.98" y="116.84" smashed="yes" rot="R180">
+<attribute name="VALUE" x="-91.44" y="119.38" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND23" gate="1" x="-93.98" y="99.06" smashed="yes">
+<attribute name="VALUE" x="-96.52" y="96.52" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -15723,11 +15839,6 @@ PCB: 0.8mm
 <pinref part="C31" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="GND10" gate="1" pin="GND"/>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="-132.08" y1="63.5" x2="-129.54" y2="63.5" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="C29" gate="G$1" pin="-"/>
 <pinref part="GND38" gate="1" pin="GND"/>
 <wire x1="68.58" y1="-76.2" x2="68.58" y2="-78.74" width="0.1524" layer="91"/>
@@ -15770,12 +15881,6 @@ PCB: 0.8mm
 <pinref part="C8" gate="G$1" pin="2"/>
 <pinref part="C9" gate="G$1" pin="2"/>
 <pinref part="R27" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="4"/>
-<wire x1="-132.08" y1="71.12" x2="-129.54" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="-129.54" y1="71.12" x2="-129.54" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U1" gate="B" pin="VSSA/VREF-"/>
@@ -15904,6 +16009,18 @@ PCB: 0.8mm
 <pinref part="GND20" gate="1" pin="GND"/>
 <pinref part="C15" gate="G$1" pin="2"/>
 <pinref part="C19" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-4" pin="S"/>
+<wire x1="-96.52" y1="111.76" x2="-93.98" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="GND21" gate="1" pin="GND"/>
+<wire x1="-93.98" y1="111.76" x2="-93.98" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-1" pin="S"/>
+<wire x1="-96.52" y1="104.14" x2="-93.98" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="GND23" gate="1" pin="GND"/>
+<wire x1="-93.98" y1="104.14" x2="-93.98" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -16705,9 +16822,9 @@ PCB: 0.8mm
 <label x="5.08" y="-22.86" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<label x="-129.54" y="66.04" size="1.27" layer="95" xref="yes"/>
-<pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="-132.08" y1="66.04" x2="-129.54" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-2" pin="S"/>
+<wire x1="-96.52" y1="106.68" x2="-93.98" y2="106.68" width="0.1524" layer="91"/>
+<label x="-93.98" y="106.68" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RX3" class="0">
@@ -16717,9 +16834,9 @@ PCB: 0.8mm
 <label x="5.08" y="-25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<label x="-129.54" y="68.58" size="1.27" layer="95" xref="yes"/>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="-132.08" y1="68.58" x2="-129.54" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-3" pin="S"/>
+<wire x1="-96.52" y1="109.22" x2="-93.98" y2="109.22" width="0.1524" layer="91"/>
+<label x="-93.98" y="109.22" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="TX2" class="0">
