@@ -14977,8 +14977,8 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <part name="SUPPLY23" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="GND21" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="X1" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-04-PIN" device="-LONG-PAD"/>
-<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND23" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY13" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="3.3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15592,11 +15592,11 @@ PCB: 0.8mm
 <instance part="X1" gate="-4" x="-111.76" y="111.76" smashed="yes" rot="R180">
 <attribute name="NAME" x="-114.3" y="112.522" size="1.524" layer="95" rot="R180"/>
 </instance>
-<instance part="GND8" gate="1" x="-106.68" y="116.84" smashed="yes" rot="R180">
-<attribute name="VALUE" x="-104.14" y="119.38" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="GND23" gate="1" x="-106.68" y="99.06" smashed="yes">
 <attribute name="VALUE" x="-109.22" y="96.52" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY13" gate="G$1" x="-106.68" y="114.3" smashed="yes">
+<attribute name="VALUE" x="-106.68" y="117.094" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 </instances>
 <busses>
@@ -16009,12 +16009,6 @@ PCB: 0.8mm
 <pinref part="U8" gate="B" pin="VSSA/VREF-"/>
 <wire x1="71.12" y1="63.5" x2="73.66" y2="63.5" width="0.1524" layer="91"/>
 <junction x="73.66" y="63.5"/>
-</segment>
-<segment>
-<pinref part="X1" gate="-4" pin="S"/>
-<wire x1="-109.22" y1="111.76" x2="-106.68" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="GND8" gate="1" pin="GND"/>
-<wire x1="-106.68" y1="111.76" x2="-106.68" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-1" pin="S"/>
@@ -16532,6 +16526,12 @@ PCB: 0.8mm
 <wire x1="2.54" y1="60.96" x2="2.54" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="U8" gate="B" pin="VBAT"/>
 <wire x1="2.54" y1="58.42" x2="10.16" y2="58.42" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-4" pin="S"/>
+<wire x1="-109.22" y1="111.76" x2="-106.68" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="SUPPLY13" gate="G$1" pin="3.3V"/>
+<wire x1="-106.68" y1="111.76" x2="-106.68" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VDDA" class="0">

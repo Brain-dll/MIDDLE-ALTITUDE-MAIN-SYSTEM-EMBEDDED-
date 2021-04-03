@@ -2176,9 +2176,9 @@ design rules under a new name.</description>
 <contactref element="MN" pad="1"/>
 <contactref element="SW" pad="1"/>
 <wire x1="78.867" y1="29.0068" x2="80.0354" y2="29.0068" width="1.524" layer="1"/>
-<wire x1="81.8134" y1="27.2288" x2="80.0354" y2="29.0068" width="1.524" layer="1"/>
-<wire x1="81.8134" y1="27.2288" x2="81.8134" y2="21.7424" width="1.524" layer="1"/>
-<wire x1="79.6671" y1="19.5961" x2="81.8134" y2="21.7424" width="1.524" layer="1"/>
+<wire x1="81.2292" y1="27.813" x2="80.0354" y2="29.0068" width="1.524" layer="1"/>
+<wire x1="81.2292" y1="27.813" x2="81.2292" y2="21.1582" width="1.524" layer="1"/>
+<wire x1="79.6671" y1="19.5961" x2="81.2292" y2="21.1582" width="1.524" layer="1"/>
 <wire x1="79.0702" y1="32.4104" x2="79.0702" y2="29.21" width="1.524" layer="1"/>
 <wire x1="78.867" y1="29.0068" x2="79.0702" y2="29.21" width="1.016" layer="1"/>
 <wire x1="40.6652" y1="27.762" x2="43.8404" y2="27.762" width="0.381" layer="16"/>
@@ -2225,13 +2225,13 @@ design rules under a new name.</description>
 <contactref element="SG1" pad="-"/>
 <contactref element="Q3" pad="2"/>
 <contactref element="Q2" pad="2"/>
-<polygon width="0" layer="16" rank="2">
+<polygon width="0.2286" layer="16" rank="2">
 <vertex x="34.1122" y="65.6336"/>
 <vertex x="34.1122" y="-22.6314"/>
 <vertex x="84.5312" y="-22.6314"/>
 <vertex x="84.5312" y="65.6336"/>
 </polygon>
-<polygon width="0" layer="1" rank="2">
+<polygon width="0.2286" layer="1" rank="2">
 <vertex x="33.6296" y="66.1416"/>
 <vertex x="33.6296" y="-23.0632"/>
 <vertex x="84.7852" y="-23.0632"/>
@@ -2320,8 +2320,11 @@ design rules under a new name.</description>
 <contactref element="U8" pad="35"/>
 <contactref element="U8" pad="8"/>
 <via x="57.5056" y="29.5148" extent="1-16" drill="0.381"/>
-<contactref element="X1" pad="4"/>
 <contactref element="X1" pad="1"/>
+<via x="58.6486" y="34.8996" extent="1-16" drill="0.4064"/>
+<via x="62.6618" y="39.751" extent="1-16" drill="0.4064"/>
+<wire x1="55.9174" y1="27.754" x2="55.9174" y2="28.587" width="0.2286" layer="16"/>
+<wire x1="55.9174" y1="28.587" x2="56.2102" y2="28.8798" width="0.2286" layer="16"/>
 </signal>
 <signal name="N$4">
 <contactref element="F1" pad="1"/>
@@ -2786,6 +2789,13 @@ design rules under a new name.</description>
 <wire x1="51.904" y1="35.242" x2="52.392" y2="34.754" width="0.3048" layer="16"/>
 <wire x1="52.392" y1="34.754" x2="52.4174" y2="34.754" width="0.3048" layer="16"/>
 <wire x1="59.4174" y1="36.254" x2="59.8292" y2="36.6658" width="0.3048" layer="16"/>
+<contactref element="X1" pad="4"/>
+<wire x1="74.3204" y1="42.672" x2="75.7682" y2="41.2242" width="0.381" layer="1"/>
+<wire x1="75.7682" y1="41.2242" x2="79.9846" y2="41.2242" width="0.381" layer="1"/>
+<wire x1="79.9846" y1="41.2242" x2="82.933334375" y2="38.275465625" width="0.381" layer="1"/>
+<wire x1="82.933334375" y1="38.275465625" x2="82.945625" y2="17.983025" width="0.381" layer="1"/>
+<wire x1="82.945625" y1="17.983025" x2="81.752" y2="16.7894" width="0.381" layer="1"/>
+<wire x1="81.752" y1="16.7894" x2="81.1022" y2="16.7894" width="0.381" layer="1"/>
 </signal>
 <signal name="VDDA">
 <contactref element="L2" pad="2"/>
