@@ -197,14 +197,12 @@
 <wire x1="35.65818125" y1="65.458" x2="34.5186" y2="63.8087625" width="0" layer="20" curve="89.821232"/>
 <hole x="38.4302" y="60.6298" drill="3.5"/>
 <hole x="80.0354" y="61.1378" drill="3.5"/>
-<circle x="59.2836" y="19.177" radius="52.5" width="0.1524" layer="48"/>
 <hole x="61.8744" y="-18.2894" drill="3.5"/>
 <hole x="38.4302" y="-18.2386" drill="3.5"/>
 <hole x="51.6128" y="-18.2894" drill="3.5"/>
 <hole x="57.5174" y="53.3804" drill="2.5"/>
 <text x="82.8548" y="-6.096" size="1.778" layer="21" rot="R90">  MERGEN
 09.03.2021</text>
-<circle x="103.886" y="70.8406" radius="3.5" width="0.1524" layer="22"/>
 </plain>
 <libraries>
 <library name="Diode" urn="urn:adsk.eagle:library:16378169">
@@ -2269,16 +2267,16 @@ design rules under a new name.</description>
 <contactref element="Q3" pad="2"/>
 <contactref element="Q2" pad="2"/>
 <polygon width="0.381" layer="16" rank="2">
-<vertex x="31.369" y="67.2084"/>
-<vertex x="31.369" y="-26.162"/>
-<vertex x="86.7156" y="-26.162"/>
-<vertex x="86.7156" y="67.2084"/>
+<vertex x="34.1884" y="65.7606"/>
+<vertex x="34.1884" y="-22.3774"/>
+<vertex x="84.4296" y="-22.3774"/>
+<vertex x="84.4296" y="65.7606"/>
 </polygon>
 <polygon width="0.381" layer="1" rank="2">
-<vertex x="30.7594" y="67.7164"/>
-<vertex x="30.7594" y="-27.0764"/>
-<vertex x="87.249" y="-27.0764"/>
-<vertex x="87.249" y="67.7164"/>
+<vertex x="34.163" y="65.7606"/>
+<vertex x="34.163" y="-22.4282"/>
+<vertex x="84.4804" y="-22.4282"/>
+<vertex x="84.4804" y="65.7606"/>
 </polygon>
 <via x="74.3458" y="-7.5692" extent="1-16" drill="0.4064"/>
 <via x="75.4126" y="-7.62" extent="1-16" drill="0.4064"/>
