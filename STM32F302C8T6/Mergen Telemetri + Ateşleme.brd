@@ -197,7 +197,6 @@
 <wire x1="49.30481875" y1="88.0259" x2="50.4444" y2="86.3766625" width="0" layer="20" curve="-89.821232"/>
 <hole x="46.5328" y="83.1977" drill="3.5"/>
 <hole x="4.9276" y="83.7057" drill="3.5"/>
-<hole x="22.8346" y="4.3801" drill="3.5"/>
 <hole x="46.5328" y="4.3293" drill="3.5"/>
 <hole x="33.0962" y="4.3801" drill="3.5"/>
 <hole x="27.4456" y="75.9483" drill="2.5"/>
@@ -205,6 +204,7 @@
 09.03.2021</text>
 <wire x1="31.2547" y1="63.627" x2="31.2547" y2="61.1505" width="0.1016" layer="21"/>
 <wire x1="29.2481" y1="63.6397" x2="29.2481" y2="61.1632" width="0.1016" layer="21"/>
+<hole x="4.9403" y="23.5317" drill="3.5"/>
 </plain>
 <libraries>
 <library name="Diode" urn="urn:adsk.eagle:library:16378169">
@@ -3142,12 +3142,6 @@ design rules under a new name.</description>
 <vertex x="29.5402" y="4.4323" curve="90"/>
 <vertex x="33.0454" y="0.9525" curve="90"/>
 </polygon>
-<polygon width="0.1524" layer="16">
-<vertex x="26.3398" y="4.4069" curve="90"/>
-<vertex x="22.8092" y="7.8867" curve="90"/>
-<vertex x="19.3294" y="4.4069" curve="90"/>
-<vertex x="22.86" y="0.8763" curve="90"/>
-</polygon>
 <polygon width="0.1524" layer="1">
 <vertex x="1.4224" y="83.5787" curve="-90"/>
 <vertex x="4.953" y="87.0585" curve="-90"/>
@@ -3172,13 +3166,6 @@ design rules under a new name.</description>
 <vertex x="33.02" y="7.9629" curve="-90"/>
 <vertex x="36.5506" y="4.4323" curve="-90"/>
 <vertex x="33.02" y="0.9525" curve="-90"/>
-</polygon>
-<polygon width="0.1524" layer="1">
-<vertex x="19.3294" y="4.4069" curve="-90"/>
-<vertex x="22.8092" y="7.8867"/>
-<vertex x="22.8346" y="7.8867" curve="-90"/>
-<vertex x="26.3398" y="4.3561" curve="-90"/>
-<vertex x="22.86" y="0.8763" curve="-90"/>
 </polygon>
 </signal>
 <signal name="N$21">
@@ -3387,6 +3374,21 @@ design rules under a new name.</description>
 <wire x1="3.1242" y1="49.1617" x2="3.1242" y2="56.5658" width="1.016" layer="1"/>
 <wire x1="3.1242" y1="56.5658" x2="4.7827" y2="58.2243" width="1.016" layer="1"/>
 <wire x1="4.7827" y1="58.2243" x2="5.3594" y2="58.2243" width="1.016" layer="1"/>
+</signal>
+<signal name="D1">
+<polygon width="0.1524" layer="16">
+<vertex x="8.4455" y="23.5585" curve="90"/>
+<vertex x="4.9149" y="27.0383" curve="90"/>
+<vertex x="1.4351" y="23.5585" curve="90"/>
+<vertex x="4.9657" y="20.0279" curve="90"/>
+</polygon>
+<polygon width="0.1524" layer="1">
+<vertex x="1.4351" y="23.5585" curve="-90"/>
+<vertex x="4.9149" y="27.0383"/>
+<vertex x="4.9403" y="27.0383" curve="-90"/>
+<vertex x="8.4455" y="23.5077" curve="-90"/>
+<vertex x="4.9657" y="20.0279" curve="-90"/>
+</polygon>
 </signal>
 </signals>
 <mfgpreviewcolors>
