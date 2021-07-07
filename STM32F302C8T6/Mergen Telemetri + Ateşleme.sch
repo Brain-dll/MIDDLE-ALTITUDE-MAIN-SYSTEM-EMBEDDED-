@@ -15166,7 +15166,7 @@ by exp-lbrs.ulp</description>
 <part name="GND29" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="U7" library="AMS1117-3.3" library_urn="urn:adsk.eagle:library:27162810" deviceset="AMS1117-3.3" device="" package3d_urn="urn:adsk.eagle:package:27162813/2"/>
+<part name="U7" library="AMS1117-3.3" library_urn="urn:adsk.eagle:library:27162810" deviceset="AMS1117-3.3" device="" package3d_urn="urn:adsk.eagle:package:27162813/2" value="AMS1117-5.0"/>
 <part name="GND36" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U6" library="AMS1117-3.3" library_urn="urn:adsk.eagle:library:27162810" deviceset="AMS1117-3.3" device="" package3d_urn="urn:adsk.eagle:package:27162813/2"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -15288,7 +15288,7 @@ by exp-lbrs.ulp</description>
 <part name="APOGEE" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="3.5MM-NO_SILK" package3d_urn="urn:adsk.eagle:package:38055/1"/>
 <part name="D5" library="Diode" library_urn="urn:adsk.eagle:library:16378169" deviceset="SCHOTTKY_" device="DO-219" package3d_urn="urn:adsk.eagle:package:9427153/2" technology="MBR0520LT1G" value="B5819W"/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="8.4V"/>
-<part name="U1" library="AMS1117-3.3" library_urn="urn:adsk.eagle:library:27162810" deviceset="AMS1117-3.3" device="" package3d_urn="urn:adsk.eagle:package:27162813/2"/>
+<part name="U1" library="AMS1117-3.3" library_urn="urn:adsk.eagle:library:27162810" deviceset="AMS1117-3.3" device="" package3d_urn="urn:adsk.eagle:package:27162813/2" value="AMS1117-5.0"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="D10" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:27167846" deviceset="LED" device="0603" package3d_urn="urn:adsk.eagle:package:27167834/2"/>
 <part name="C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="47UF-POLAR" device="-EIA3528-10V-10%" package3d_urn="urn:adsk.eagle:package:37411/1" value="22uF"/>
