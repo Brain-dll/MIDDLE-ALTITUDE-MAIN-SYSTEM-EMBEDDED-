@@ -1,0 +1,10 @@
+BME280.c:15:6:BME280_Init	24	static
+BME280.c:33:6:BME280_GetCalibration_Value	56	static
+BME280.c:56:6:BME280_SetCalibration	24	static
+BME280.c:68:9:BME280_Get_Uncompansated_Temperature	32	static
+BME280.c:79:7:BME280_Get_Temperature	24	static
+BME280.c:90:10:BME280_Get_Uncompansated_Pressure	32	static
+BME280.c:101:7:BME280_Get_Pressure	24	static
+BME280.c:127:7:BME280_Get_Altitude	24	static
+BME280.c:136:7:Array_sort_BME	32	static
+BME280.c:153:7:BME280_ALT_MEDIANFILTER	144	static

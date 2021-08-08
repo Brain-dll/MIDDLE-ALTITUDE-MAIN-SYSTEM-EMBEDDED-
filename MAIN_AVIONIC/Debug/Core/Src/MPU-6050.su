@@ -1,0 +1,13 @@
+MPU-6050.c:39:6:MPU6050_Init	8	static
+MPU-6050.c:50:6:MPU6050_SetCalibration	24	static
+MPU-6050.c:68:6:MPU6050_Read_Accelarition	24	static
+MPU-6050.c:79:6:MPU6050_Read_Gyro	24	static
+MPU-6050.c:90:7:MPU6050_AccX	8	static
+MPU-6050.c:95:7:MPU6050_AccY	8	static
+MPU-6050.c:100:7:MPU6050_AccZ	8	static
+MPU-6050.c:105:7:MPU6050_GyroX	8	static
+MPU-6050.c:110:7:MPU6050_GyroY	8	static
+MPU-6050.c:115:7:MPU6050_GyroZ	8	static
+MPU-6050.c:121:7:Array_sort_MPU	32	static
+MPU-6050.c:138:7:MEDIAN_AXIS_FILTER	96	static
+MPU-6050.c:195:6:CalculateError	32	static
