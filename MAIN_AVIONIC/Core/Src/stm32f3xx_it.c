@@ -23,6 +23,7 @@
 #include "stm32f3xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +60,6 @@
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim6;
-extern TIM_HandleTypeDef htim16;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
@@ -73,6 +73,9 @@ extern uint8_t warning;
 uint8_t a = 0;
 uint8_t t2 = 0;
 uint8_t t1 = 0;
+
+uint8_t gyro = 0;
+uint8_t t3 = 0;
 
 extern char COOR[60];
 extern uint8_t ADDH;
@@ -239,7 +242,6 @@ void TIM1_UP_TIM16_IRQHandler(void)
 
   /* USER CODE END TIM1_UP_TIM16_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
-  HAL_TIM_IRQHandler(&htim16);
   /* USER CODE BEGIN TIM1_UP_TIM16_IRQn 1 */
 	  MPU_RP = 1;
   /* USER CODE END TIM1_UP_TIM16_IRQn 1 */
@@ -263,8 +265,13 @@ void TIM2_IRQHandler(void)
 	RF = 1;
 	t2 = 0;
   }
+  if(t3 == 4){
+	  t3 = 0;
+	  gyro = 1;
+  }
   t2++;
   t1++;
+  t3++;
   /* USER CODE END TIM2_IRQn 1 */
 }
 
@@ -296,6 +303,7 @@ void TIM6_DAC_IRQHandler(void)
   /* USER CODE END TIM6_DAC_IRQn 0 */
   HAL_TIM_IRQHandler(&htim6);
   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
+    MPU_RP = 1;
 	MPU = 1;
 	if(a == 8){//1.6-2.12-
 	BME = 1;

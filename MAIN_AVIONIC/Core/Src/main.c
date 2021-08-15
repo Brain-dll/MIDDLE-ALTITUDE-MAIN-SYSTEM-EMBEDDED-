@@ -54,6 +54,11 @@ float AcceAngleX = .0, AcceAngleY = .0, GyroAngleX = .0, GyroAngleY = .0, GyroAn
 float GyroBound = 3.0;
 float roll = .0, pitch = .0;
 
+float maxPositiveRoll = 0;
+float maxNegativeRoll = -79.0;
+float maxPositivePitch = 82.0;
+float maxNegativePitch = -76.0;
+
 
 uint32_t CurrentTime = 0, PreviousTime = 0;
 float ElapsedTime = .0;
@@ -61,6 +66,8 @@ float ElapsedTime = .0;
 float calcoor(float x);
 void LORA_READ_PARAMETER(void);
 void LORA_CONFG(uint8_t ADDH, uint8_t ADDL, uint8_t CHN, uint8_t MODE);
+void ReadGyroAcceValues(void);
+void ReadAccerollpitchValues(void);
 
 float A = 0, T, P, V;
 float BM_V[6] = {0}, BM_A[6] = {0};
@@ -82,6 +89,17 @@ uint8_t apg = 0;
 uint8_t mn = 0;
 uint8_t MPU_RP = 0;
 uint8_t counter_Tel = 0;
+extern uint8_t gyro;
+
+uint8_t runningSize = 5;
+float gyroArrayX[5];
+float gyroArrayY[5];
+float gyroArrayZ[5];
+uint8_t countRunning = 1;
+float totalGyroX = 0.0;
+float totalGyroY = 0.0;
+float totalGyroZ = 0.0;
+uint8_t startRunning = 0;
 
 char RX_BUF[512];
 char GPGGA[75];
@@ -109,7 +127,6 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim6;
 TIM_HandleTypeDef htim15;
-TIM_HandleTypeDef htim16;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -188,6 +205,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 			}
 		}
 	}
+	//HAL_UART_Receive_DMA(&huart1, (uint8_t *)RX_BUF, 512);
 }
 /* USER CODE END PV */
 
@@ -203,7 +221,6 @@ static void MX_TIM2_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM15_Init(void);
-static void MX_TIM16_Init(void);
 /* USER CODE BEGIN PFP */
 //extern uint32_t SystemCoreClock;
 //uint32_t Systemlock = 0;
@@ -227,7 +244,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+   HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -251,7 +268,6 @@ int main(void)
   MX_TIM6_Init();
   MX_TIM1_Init();
   MX_TIM15_Init();
-  MX_TIM16_Init();
   /* USER CODE BEGIN 2 */
 	/*HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, SET);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, SET);*/
@@ -264,8 +280,8 @@ int main(void)
 	enum device {
 		Ephemerish, Payload
 	} dev_ID;
-	//dev_ID = Ephemerish;
-	dev_ID = Payload;
+	dev_ID = Ephemerish;
+	//dev_ID = Payload;
 
 	enum rocket {
 		Rail, Launch, Burnout, Apogee, Descent, Main, Recovery
@@ -287,7 +303,6 @@ int main(void)
 	HAL_TIM_Base_Start(&htim15);
 	HAL_TIM_Base_Start(&htim1);
 	HAL_TIM_Base_Start_IT(&htim2);
-	HAL_TIM_Base_Start_IT(&htim16);
 	//
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
 	HAL_UART_Receive_DMA(&huart1, (uint8_t *)RX_BUF, 512);
@@ -300,65 +315,11 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-	  //ElapsedTime = 0, CurrentTime = 0, PreviousTime = 0;
-	  PreviousTime = CurrentTime;
-	  CurrentTime = __HAL_TIM_GET_COUNTER(&htim15);
-	  if(CurrentTime < PreviousTime)
-		  CurrentTime += 65535;
-	  ElapsedTime = (float)(CurrentTime - PreviousTime) / 1000.0;
-
-		if (EPHEMERISH != Rail && MPU_RP == 1) {
-
-			AcceX = MPU6050_AccX();
-			AcceY = MPU6050_AccY();
-			AcceZ = MPU6050_AccZ();
-
-			AcceAngleX = ((atan(
-					(AcceY) / sqrt(pow((AcceX), 2) + pow((AcceZ), 2))) * 180
-					/ PI)) - acceOffsetX;
-			AcceAngleY = ((atan(
-					-1 * (AcceX) / sqrt(pow((AcceY), 2) + pow((AcceZ), 2)))
-					* 180 / PI)) - acceOffsetY;
-
-			GyroX = MPU6050_GyroX();
-			GyroY = MPU6050_GyroY();
-			GyroZ = MPU6050_GyroZ();
-
-			// handle gyro errors
-			GyroX = GyroX - gyroOffsetX;
-			GyroY = GyroY - gyroOffsetY;
-			GyroZ = GyroZ - gyroOffsetZ;
-
-			if (abs(GyroX) < GyroBound) {
-				GyroX = 0;
-			}
-			if (abs(GyroY) < GyroBound) {
-				GyroY = 0;
-			}
-			if (abs(GyroZ) < GyroBound + 3) {
-				GyroZ = 0;
-			}
-
-		GyroAngleX += (GyroX * ElapsedTime);
-		GyroAngleY += (GyroY * ElapsedTime);
-
-		roll = 0.90 * GyroAngleX + 0.10 * AcceAngleX;
-		pitch = 0.90 * GyroAngleY + 0.10 * AcceAngleY;
-
-		MPU_RP = 0;
+		/* USER CODE BEGIN 3 */
+		if (EPHEMERISH != Rail) {
+			ReadAccerollpitchValues();
 		}
 
-		/*
-		 roll = atan(Az / sqrt(pow(Ay, 2) + pow(Ax, 2))) * 180 / PI;
-		 pitch = atan(-1 * Ay / sqrt(pow(Az, 2) + pow(Ax, 2))) * 180 / PI;
-
-		 A1 = BME280_Get_Altitude();
-		 V = (A - A1);
-
-		 rollFilter = 0.94 * rollFilter + 0.06 * roll;
-		 pitchFilter = 0.94 * pitchFilter + 0.06 * pitch;
-		 BM[0] = BME280_ALT_MEDIANFILTER();*/
 		switch (EPHEMERISH) {
 		case Rail:
 			if (MPU == 1) {
@@ -371,6 +332,7 @@ int main(void)
 					}
 					if (C1 >= 3) {
 						EPHEMERISH = Launch;
+						//EPHEMERISH = Apogee;
 						for (uint8_t i = 0; i < (EPHEMERISH * 2); i++) {
 							HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 							HAL_Delay(50);
@@ -401,12 +363,13 @@ int main(void)
 					if (BM_S == 5) {
 						uint8_t M = 0;
 						for (uint8_t i = 0; i <= BM_S; i++) {
-							if (BM_V[i] > 20) // TEST BURNOUT VALUE = 20 READ BURNOUT VALUE = 100
+							if (BM_V[i] > 35) // TEST BURNOUT VALUE = 15 READ BURNOUT VALUE = 100
 								M++;
 						}
 						if (M >= 3) {
 							//**********************
 							EPHEMERISH = Burnout;
+
 							for (uint8_t i = 0; i < (EPHEMERISH * 2); i++) {
 								HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
 								HAL_Delay(50);
@@ -440,7 +403,7 @@ int main(void)
 					if (BM_S == 5) {
 						uint8_t M = 0;
 						for (uint8_t i = 0; i <= BM_S; i++) {
-							if (BM_V[i] < 10)    //  if (BM_V[i] < 20)
+							if (BM_V[i] < 5)    //  if (BM_V[i] < 20)
 								M++;
 						}
 						if (M >= 3) {
@@ -471,7 +434,9 @@ int main(void)
 				dif = tim2 - tim1;
 			} else
 				dif = tim2 - tim1;
-			if (dif > 1700 /*||  GYRO  */) {
+			//ReadGyroAcceValues();
+
+			if (dif > 1700 /*|| Gyro */) {  // ****************
 				EPHEMERISH = Descent;
 				for (uint8_t i = 0; i < (EPHEMERISH * 2); i++) {
 					HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
@@ -479,10 +444,8 @@ int main(void)
 				}
 				HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, SET);
-				//HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, SET);  // ***************
 				HAL_Delay(600);
 				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, RESET);
-				//HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, RESET);  // **************
 				HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 				apg = 1;
 				HAL_TIM_Base_Start_IT(&htim2);
@@ -503,7 +466,7 @@ int main(void)
 						dif = tim2 - tim1;
 					} else
 						dif = tim2 - tim1;
-					BM_V[BM_S/*(BM_S - 1) / 2*/] = (BM_A[1] - BM_A[0]) / (0.001 * dif);
+					BM_V[BM_S] = (BM_A[1] - BM_A[0]) / (0.001 * dif);
 					alt_l = 0;  //**************
 				}
 
@@ -558,10 +521,10 @@ int main(void)
 					} else
 						dif = tim2 - tim1;
 					BM_V[BM_S] = (BM_A[1] - BM_A[0]) / (0.001 * dif);
-					//BM_V[(BM_S - 1) / 2] = (BM_A[1] - BM_A[0]) / (0.001 * dif);
 					alt_l = 0;  //**************
 					BM_S++;
-					if(BM_S == 5) BM_S = 0;
+					if (BM_S == 5)
+						BM_S = 0;
 				}
 			}
 			if (warning == 1) {
@@ -572,8 +535,8 @@ int main(void)
 			}
 			break;
 		}
-		//if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
-		if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4)) // PAYLOAD
+		if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
+				//if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4)) // PAYLOAD
 				{
 			if (EPHEMERISH == Rail && counter_Tel < 10) {
 				COOR[0] = ADDH;
@@ -586,24 +549,18 @@ int main(void)
 				for (uint16_t X = 0; X < sizeof(COOR); X++) {
 					COOR[X] = '\0';
 				}
-//				lat = .0;
-//				lng = .0;
-//				RF = 0;
 				counter_Tel++;
 			} else if (EPHEMERISH != Rail) {
 				COOR[0] = ADDH;
 				COOR[1] = ADDL;
 				COOR[2] = CHN;
 				sprintf(COOR, "%s%d:%d:%2.7f:%2.7f:%.2f:%.2f:%.2f,%.2f:%d:%d\n",
-						COOR, dev_ID, time, lat, lng, BM_A[1], BM_V[2], roll,
-						pitch, apg, mn);
+						COOR, dev_ID, time, lat, lng, BM_A[1], BM_V[2],
+						AcceAngleX, AcceAngleY, apg, mn);
 				HAL_UART_Transmit(&huart2, (uint8_t*) COOR, sizeof(COOR), 1000);
 				for (uint16_t X = 0; X < sizeof(COOR); X++) {
 					COOR[X] = '\0';
 				}
-//				lat = .0;
-//				lng = .0;
-//				RF = 0;
 			}
 			lat = .0;
 			lng = .0;
@@ -653,13 +610,11 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_I2C2
-                              |RCC_PERIPHCLK_TIM1|RCC_PERIPHCLK_TIM15
-                              |RCC_PERIPHCLK_TIM16;
+                              |RCC_PERIPHCLK_TIM1|RCC_PERIPHCLK_TIM15;
   PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK1;
   PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_HSI;
   PeriphClkInit.Tim1ClockSelection = RCC_TIM1CLK_HCLK;
   PeriphClkInit.Tim15ClockSelection = RCC_TIM15CLK_HCLK;
-  PeriphClkInit.Tim16ClockSelection = RCC_TIM16CLK_HCLK;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -885,38 +840,6 @@ static void MX_TIM15_Init(void)
   /* USER CODE BEGIN TIM15_Init 2 */
 
   /* USER CODE END TIM15_Init 2 */
-
-}
-
-/**
-  * @brief TIM16 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM16_Init(void)
-{
-
-  /* USER CODE BEGIN TIM16_Init 0 */
-
-  /* USER CODE END TIM16_Init 0 */
-
-  /* USER CODE BEGIN TIM16_Init 1 */
-
-  /* USER CODE END TIM16_Init 1 */
-  htim16.Instance = TIM16;
-  htim16.Init.Prescaler = 8999;
-  htim16.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim16.Init.Period = 3;
-  htim16.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim16.Init.RepetitionCounter = 0;
-  htim16.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim16) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM16_Init 2 */
-
-  /* USER CODE END TIM16_Init 2 */
 
 }
 
@@ -1149,6 +1072,156 @@ float calcoor(float x)
 	float a = (int)x / 100;
 	float b = (x - (a * 100.0)) / 60.0;
 	return a+b;
+}
+
+void ReadGyroAcceValues() {
+
+	PreviousTime = CurrentTime;
+	CurrentTime = __HAL_TIM_GET_COUNTER(&htim15);
+	if (CurrentTime < PreviousTime)
+		CurrentTime += 65535;
+	ElapsedTime = (float) (CurrentTime - PreviousTime) / 1000.0;
+
+	AcceX = MPU6050_AccX();
+	AcceY = MPU6050_AccY();
+	AcceZ = MPU6050_AccZ();
+
+	AcceAngleX = ((atan((AcceY) / sqrt(pow((AcceX), 2) + pow((AcceZ), 2))) * 180
+			/ PI)) - acceOffsetX;
+	AcceAngleY = ((atan(-1 * (AcceX) / sqrt(pow((AcceY), 2) + pow((AcceZ), 2)))
+			* 180 / PI)) - acceOffsetY;
+
+	GyroX = MPU6050_GyroX();
+	GyroY = MPU6050_GyroY();
+	GyroZ = MPU6050_GyroZ();
+
+	// handle gyro errors
+	GyroX = GyroX - gyroOffsetX;
+	GyroY = GyroY - gyroOffsetY;
+	GyroZ = GyroZ - gyroOffsetZ;
+
+	if (abs(GyroX) < GyroBound) {
+		GyroX = 0;
+	}
+	if (abs(GyroY) < GyroBound) {
+		GyroY = 0;
+	}
+	if (abs(GyroZ) < GyroBound + 3) {
+		GyroZ = 0;
+	}
+
+	if (countRunning >= runningSize && startRunning == 0) {
+		startRunning = 1;
+	}
+
+	totalGyroX += (-gyroArrayX[countRunning - 1] + GyroX);
+	totalGyroY += (-gyroArrayY[countRunning - 1] + GyroY);
+	totalGyroZ += (-gyroArrayZ[countRunning - 1] + GyroZ);
+	gyroArrayX[countRunning - 1] = GyroX;
+	gyroArrayY[countRunning - 1] = GyroY;
+	gyroArrayZ[countRunning - 1] = GyroZ;
+
+	// take average
+	if (startRunning) {
+		GyroX = (totalGyroX / (float) runningSize);
+		GyroY = (totalGyroY / (float) runningSize);
+		GyroZ = (totalGyroZ / (float) runningSize);
+	}
+
+	countRunning++;
+	if (countRunning >= (runningSize + 1)) {
+		countRunning = 1;
+	}
+
+	GyroAngleX += (GyroX * ElapsedTime);
+	GyroAngleY += (GyroY * ElapsedTime);
+
+//	if (gyro == 1) {
+//		GyroAngleX = AcceAngleX;
+//		GyroAngleY = AcceAngleY;
+//		gyro = 0;
+//	}
+
+	roll = 0.90 * GyroAngleX + 0.10 * AcceAngleX;
+	pitch = 0.90 * GyroAngleY + 0.10 * AcceAngleY;
+
+	MPU_RP = 0;
+
+}
+
+void ReadAccerollpitchValues(void) {
+
+//	PreviousTime = CurrentTime;
+//	CurrentTime = __HAL_TIM_GET_COUNTER(&htim15);
+//	if (CurrentTime < PreviousTime)
+//		CurrentTime += 65535;
+//	ElapsedTime = (float) (CurrentTime - PreviousTime) / 1000.0;
+
+	AcceX = MPU6050_AccX();
+	AcceY = MPU6050_AccY();
+	AcceZ = MPU6050_AccZ();
+
+	AcceAngleX = ((atan((AcceY) / sqrt(pow((AcceX), 2) + pow((AcceZ), 2))) * 180
+			/ PI)) - acceOffsetX;
+	AcceAngleY = ((atan(-1 * (AcceX) / sqrt(pow((AcceY), 2) + pow((AcceZ), 2)))
+			* 180 / PI)) - acceOffsetY;
+
+//	GyroX = MPU6050_GyroX();
+//	GyroY = MPU6050_GyroY();
+//	GyroZ = MPU6050_GyroZ();
+//
+//	// handle gyro errors
+//	GyroX = GyroX - gyroOffsetX;
+//	GyroY = GyroY - gyroOffsetY;
+//	GyroZ = GyroZ - gyroOffsetZ;
+
+//	if (abs(GyroX) < GyroBound) {
+//		GyroX = 0;
+//	}
+//	if (abs(GyroY) < GyroBound) {
+//		GyroY = 0;
+//	}
+//	if (abs(GyroZ) < GyroBound + 3) {
+//		GyroZ = 0;
+//	}
+
+//	if (countRunning >= runningSize && startRunning == 0) {
+//		startRunning = 1;
+//	}
+//
+//	totalGyroX += (-gyroArrayX[countRunning - 1] + GyroX);
+//	totalGyroY += (-gyroArrayY[countRunning - 1] + GyroY);
+//	totalGyroZ += (-gyroArrayZ[countRunning - 1] + GyroZ);
+//	gyroArrayX[countRunning - 1] = GyroX;
+//	gyroArrayY[countRunning - 1] = GyroY;
+//	gyroArrayZ[countRunning - 1] = GyroZ;
+//
+//	// take average
+//	if (startRunning) {
+//		GyroX = (totalGyroX / (float) runningSize);
+//		GyroY = (totalGyroY / (float) runningSize);
+//		GyroZ = (totalGyroZ / (float) runningSize);
+//	}
+//
+//	countRunning++;
+//	if (countRunning >= (runningSize + 1)) {
+//		countRunning = 1;
+//	}
+//
+//	GyroAngleX += (GyroX * ElapsedTime);
+//	GyroAngleY += (GyroY * ElapsedTime);
+
+//	if (gyro == 1) {
+//		GyroAngleX = AcceAngleX;
+//		GyroAngleY = AcceAngleY;
+//		gyro = 0;
+//	}
+
+//	roll = 0.90 * GyroAngleX + 0.10 * AcceAngleX;
+//	pitch = 0.90 * GyroAngleY + 0.10 * AcceAngleY;
+
+	MPU_RP = 0;
+
 }
 /* USER CODE END 4 */
 
