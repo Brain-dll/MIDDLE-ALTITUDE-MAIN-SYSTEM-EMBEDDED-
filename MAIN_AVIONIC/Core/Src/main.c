@@ -101,6 +101,16 @@ float totalGyroY = 0.0;
 float totalGyroZ = 0.0;
 uint8_t startRunning = 0;
 
+uint8_t runningSizeA = 5;
+float AcceArrayX[5];
+float AcceArrayY[5];
+float AcceArrayZ[5];
+uint8_t countRunningA = 1;
+float totalAcceX = 0.0;
+float totalAcceY = 0.0;
+float totalAcceZ = 0.0;
+uint8_t startRunningA = 0;
+
 char RX_BUF[512];
 char GPGGA[75];
 char LAT[9];
@@ -109,10 +119,39 @@ char TIME[10];
 char COOR[60];
 
 uint8_t RF = 0;
-uint8_t ADDH = 0x6;
-uint8_t ADDL = 0x4A;
-uint8_t CHN = 0xA;
+//uint8_t ADDH = 0x6;
+//uint8_t ADDL = 0x4A;
+//uint8_t CHN = 0xA;
+//uint8_t MODE = 1;
+
+//char LORA_ADRESS[3] = {0};
+
+///*  EPHEMERISH RECEIVER CONFGURATION  */
+//uint8_t ADDH = 0x8;
+//uint8_t ADDL = 0x2A;
+//uint8_t CHN = 0x2;
+//uint8_t MODE = 1;
+//
+//
+///*  EPHEMERISH SENDER CONFGURATION  */
+//uint8_t SENDER_ADDH = 0x6;
+//uint8_t SENDER_ADDL = 0x4A;
+//uint8_t SENDER_CHN = 0xA;
+
+
+/*  PAYLOAD RECEIVER CONFGURATION  */
+uint8_t ADDH = 0x9;
+uint8_t ADDL = 0x3A;
+uint8_t CHN = 0x3;
 uint8_t MODE = 1;
+
+
+/*  PAYLOAD SENDER CONFGURATION  */
+uint8_t SENDER_ADDH = 0x6;
+uint8_t SENDER_ADDL = 0x4A;
+uint8_t SENDER_CHN = 0xA;
+
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -280,8 +319,8 @@ int main(void)
 	enum device {
 		Ephemerish, Payload
 	} dev_ID;
-	dev_ID = Ephemerish;
-	//dev_ID = Payload;
+	//dev_ID = Ephemerish;
+	dev_ID = Payload;
 
 	enum rocket {
 		Rail, Launch, Burnout, Apogee, Descent, Main, Recovery
@@ -295,6 +334,7 @@ int main(void)
 	HAL_TIM_Base_Start_IT(&htim2);
 	if (MPU_FAIL == 0) {
 		EPHEMERISH = Rail;
+		//EPHEMERISH = Apogee;
 		HAL_TIM_Base_Start_IT(&htim6);
 	} else if (MPU_FAIL == 1) {
 		EPHEMERISH = Launch;
@@ -303,10 +343,10 @@ int main(void)
 	HAL_TIM_Base_Start(&htim15);
 	HAL_TIM_Base_Start(&htim1);
 	HAL_TIM_Base_Start_IT(&htim2);
-	//
+	//  *************
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
 	HAL_UART_Receive_DMA(&huart1, (uint8_t *)RX_BUF, 512);
-	//
+	//  ************
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -316,6 +356,17 @@ int main(void)
     /* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
+
+//		tim1 = __HAL_TIM_GET_COUNTER(&htim1);
+//		BM_A[0] = BME280_ALT_MEDIANFILTER();
+//		tim2 = __HAL_TIM_GET_COUNTER(&htim1);
+//		if (tim2 < tim1) {
+//			tim2 = tim2 + 65535;
+//			dif = tim2 - tim1;
+//		} else
+//			dif = tim2 - tim1;
+
+
 		if (EPHEMERISH != Rail) {
 			ReadAccerollpitchValues();
 		}
@@ -366,7 +417,7 @@ int main(void)
 							if (BM_V[i] > 35) // TEST BURNOUT VALUE = 15 READ BURNOUT VALUE = 100
 								M++;
 						}
-						if (M >= 3) {
+						if (M >= 4) {
 							//**********************
 							EPHEMERISH = Burnout;
 
@@ -406,7 +457,7 @@ int main(void)
 							if (BM_V[i] < 5)    //  if (BM_V[i] < 20)
 								M++;
 						}
-						if (M >= 3) {
+						if (M >= 4) {
 							EPHEMERISH = Apogee;
 							HAL_TIM_Base_Stop_IT(&htim2);
 							tim1 = __HAL_TIM_GET_COUNTER(&htim1);
@@ -434,9 +485,9 @@ int main(void)
 				dif = tim2 - tim1;
 			} else
 				dif = tim2 - tim1;
-			//ReadGyroAcceValues();
+			ReadGyroAcceValues();
 
-			if (dif > 1700 /*|| Gyro */) {  // ****************
+			if (abs(roll) > 40 || abs(pitch) > 40 || dif > 2000) {  // ****************
 				EPHEMERISH = Descent;
 				for (uint8_t i = 0; i < (EPHEMERISH * 2); i++) {
 					HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
@@ -535,28 +586,43 @@ int main(void)
 			}
 			break;
 		}
-		if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
-				//if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4)) // PAYLOAD
+		//if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
+		if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4))	// PAYLOAD
 				{
+//			LORA_ADRESS[0] = SENDER_ADDH;
+//			LORA_ADRESS[1] = SENDER_ADDL;
+//			LORA_ADRESS[2] = SENDER_CHN;
+//
+//			sprintf(LORA_ADRESS, "%s", LORA_ADRESS);
+
 			if (EPHEMERISH == Rail && counter_Tel < 10) {
-				COOR[0] = ADDH;
-				COOR[1] = ADDL;
-				COOR[2] = CHN;
+				COOR[0] = SENDER_ADDH;
+				COOR[1] = SENDER_ADDL;
+				COOR[2] = SENDER_CHN;
+
 				sprintf(COOR, "%s%d:%d:%2.7f:%2.7f:%.2f:%.2f:%.2f,%.2f:%d:%d\n",
 						COOR, dev_ID, time, lat, lng, BM_A[1], BM_V[2], roll,
 						pitch, apg, mn);
+
+//				sprintf(COOR, "%s%d:%d:%2.7f:%2.7f:%.2f:%.2f:%.2f,%.2f:%d:%d\n",
+//						LORA_ADRESS, dev_ID, time, lat, lng, BM_A[1], BM_V[2], roll,
+//						pitch, apg, mn);
 				HAL_UART_Transmit(&huart2, (uint8_t*) COOR, sizeof(COOR), 1000);
 				for (uint16_t X = 0; X < sizeof(COOR); X++) {
 					COOR[X] = '\0';
 				}
 				counter_Tel++;
 			} else if (EPHEMERISH != Rail) {
-				COOR[0] = ADDH;
-				COOR[1] = ADDL;
-				COOR[2] = CHN;
+				COOR[0] = SENDER_ADDH;
+				COOR[1] = SENDER_ADDL;
+				COOR[2] = SENDER_CHN;
 				sprintf(COOR, "%s%d:%d:%2.7f:%2.7f:%.2f:%.2f:%.2f,%.2f:%d:%d\n",
 						COOR, dev_ID, time, lat, lng, BM_A[1], BM_V[2],
 						AcceAngleX, AcceAngleY, apg, mn);
+
+//				sprintf(COOR, "%s%d:%d:%2.7f:%2.7f:%.2f:%.2f:%.2f,%.2f:%d:%d\n",
+//						LORA_ADRESS, dev_ID, time, lat, lng, BM_A[1], BM_V[2],
+//						roll, pitch, apg, mn);
 				HAL_UART_Transmit(&huart2, (uint8_t*) COOR, sizeof(COOR), 1000);
 				for (uint16_t X = 0; X < sizeof(COOR); X++) {
 					COOR[X] = '\0';
@@ -1161,6 +1227,29 @@ void ReadAccerollpitchValues(void) {
 	AcceY = MPU6050_AccY();
 	AcceZ = MPU6050_AccZ();
 
+	if (countRunningA >= runningSizeA && startRunningA == 0) {
+		startRunningA = 1;
+	}
+
+	totalAcceX += (-AcceArrayX[countRunningA - 1] + AcceX);
+	totalAcceY += (-AcceArrayY[countRunningA - 1] + AcceY);
+	totalAcceZ += (-AcceArrayZ[countRunningA - 1] + AcceZ);
+	AcceArrayX[countRunningA - 1] = AcceX;
+	AcceArrayY[countRunningA - 1] = AcceY;
+	AcceArrayZ[countRunningA - 1] = AcceZ;
+
+	// take average
+	if (startRunning) {
+		AcceX = (totalAcceX / (float) runningSizeA);
+		AcceY = (totalAcceY / (float) runningSizeA);
+		AcceZ = (totalAcceZ / (float) runningSizeA);
+	}
+
+	countRunningA++;
+	if (countRunningA >= (runningSizeA + 1)) {
+		countRunningA = 1;
+	}
+
 	AcceAngleX = ((atan((AcceY) / sqrt(pow((AcceX), 2) + pow((AcceZ), 2))) * 180
 			/ PI)) - acceOffsetX;
 	AcceAngleY = ((atan(-1 * (AcceX) / sqrt(pow((AcceY), 2) + pow((AcceZ), 2)))
@@ -1185,28 +1274,7 @@ void ReadAccerollpitchValues(void) {
 //		GyroZ = 0;
 //	}
 
-//	if (countRunning >= runningSize && startRunning == 0) {
-//		startRunning = 1;
-//	}
-//
-//	totalGyroX += (-gyroArrayX[countRunning - 1] + GyroX);
-//	totalGyroY += (-gyroArrayY[countRunning - 1] + GyroY);
-//	totalGyroZ += (-gyroArrayZ[countRunning - 1] + GyroZ);
-//	gyroArrayX[countRunning - 1] = GyroX;
-//	gyroArrayY[countRunning - 1] = GyroY;
-//	gyroArrayZ[countRunning - 1] = GyroZ;
-//
-//	// take average
-//	if (startRunning) {
-//		GyroX = (totalGyroX / (float) runningSize);
-//		GyroY = (totalGyroY / (float) runningSize);
-//		GyroZ = (totalGyroZ / (float) runningSize);
-//	}
-//
-//	countRunning++;
-//	if (countRunning >= (runningSize + 1)) {
-//		countRunning = 1;
-//	}
+
 //
 //	GyroAngleX += (GyroX * ElapsedTime);
 //	GyroAngleY += (GyroY * ElapsedTime);

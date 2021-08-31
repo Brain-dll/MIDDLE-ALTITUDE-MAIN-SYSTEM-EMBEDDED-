@@ -261,7 +261,7 @@ void TIM2_IRQHandler(void)
 	  warning = 1;
 	  t1 = 0;
   }
-  if(t2 == 6){
+  if(t2 == 6){  //  t2 == 6
 	RF = 1;
 	t2 = 0;
   }

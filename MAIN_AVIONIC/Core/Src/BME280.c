@@ -55,10 +55,10 @@ void BME280_GetCalibration_Value()
 
 void BME280_SetCalibration(void)
 {
-	//WData[0] = 0x30; /*0xF0;*/   //  62.5ms t(standby)  IIR filter off
-	//WData[1] = 0xB7;  // X16 sample rate of temperature and pressure measurement
-	WData[0] = 0x08;	// 0.5ms t(standby)  X2 IIR filter coefficient
-	WData[1] = 0x77;	// X4 sample rate of temperature measurement, X16 sample rate of pressure measurement
+	WData[0] = 0x08; /*0xF0;*/   //  0.5ms t(standby)  X2 IIR filter coefficient
+	WData[1] = 0xB7;  // X16 sample rate of temperature and pressure measurement
+//	WData[0] = 0x08;	// 0.5ms t(standby)  X2 IIR filter coefficient
+//	WData[1] = 0x77;	// X4 sample rate of temperature measurement, X16 sample rate of pressure measurement
 	HAL_I2C_Mem_Write(&hi2c2, BME280_DEVICE_WRITE_ADRESS, 0xF5, 1, &WData[0], 1, 100);
 	HAL_Delay(20);
 	HAL_I2C_Mem_Write(&hi2c2, BME280_DEVICE_WRITE_ADRESS, 0xF4, 1, &WData[1], 1, 100);
