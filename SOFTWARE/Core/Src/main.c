@@ -39,7 +39,7 @@
 /* USER CODE BEGIN PD */
 #define t 200
 #define PI 3.14159265358979323846
-#define ACC_l 1.5  // kalkisi anlamak icin gerekli ivme eşigi (pozitif olmali)***
+#define ACC_l 2.5  // kalkisi anlamak icin gerekli ivme eşigi (pozitif olmali)***
 
 // değişebilir offset değerleri
 #define gyroOffsetX -0.22
@@ -126,30 +126,30 @@ uint8_t RF = 0;
 
 //char LORA_ADRESS[3] = {0};
 
-///*  EPHEMERISH RECEIVER CONFGURATION  */
-//uint8_t ADDH = 0x8;
-//uint8_t ADDL = 0x2A;
-//uint8_t CHN = 0x2;
-//uint8_t MODE = 1;
-//
-//
-///*  EPHEMERISH SENDER CONFGURATION  */
-//uint8_t SENDER_ADDH = 0x6;
-//uint8_t SENDER_ADDL = 0x4A;
-//uint8_t SENDER_CHN = 0xA;
-
-
-/*  PAYLOAD RECEIVER CONFGURATION  */
-uint8_t ADDH = 0x9;
-uint8_t ADDL = 0x3A;
-uint8_t CHN = 0x3;
+/*  EPHEMERISH RECEIVER CONFGURATION  */
+uint8_t ADDH = 0x8;
+uint8_t ADDL = 0x2A;
+uint8_t CHN = 0x2;
 uint8_t MODE = 1;
 
 
-/*  PAYLOAD SENDER CONFGURATION  */
+/*  EPHEMERISH SENDER CONFGURATION  */
 uint8_t SENDER_ADDH = 0x6;
 uint8_t SENDER_ADDL = 0x4A;
 uint8_t SENDER_CHN = 0xA;
+
+
+///*  PAYLOAD RECEIVER CONFGURATION  */
+//uint8_t ADDH = 0x9;
+//uint8_t ADDL = 0x3A;
+//uint8_t CHN = 0x3;
+//uint8_t MODE = 1;
+//
+//
+///*  PAYLOAD SENDER CONFGURATION  */
+//uint8_t SENDER_ADDH = 0x6;
+//uint8_t SENDER_ADDL = 0x4A;
+//uint8_t SENDER_CHN = 0xA;
 
 
 /* USER CODE END PD */
@@ -319,8 +319,8 @@ int main(void)
 	enum device {
 		Ephemerish, Payload
 	} dev_ID;
-	//dev_ID = Ephemerish;
-	dev_ID = Payload;
+	dev_ID = Ephemerish;
+	//dev_ID = Payload;
 
 	enum rocket {
 		Rail, Launch, Burnout, Apogee, Descent, Main, Recovery
@@ -586,8 +586,8 @@ int main(void)
 			}
 			break;
 		}
-		//if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
-		if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4))	// PAYLOAD
+		if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
+		//if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4))	// PAYLOAD
 				{
 //			LORA_ADRESS[0] = SENDER_ADDH;
 //			LORA_ADRESS[1] = SENDER_ADDL;

@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  0001cc57  00000000  00000000  000391d0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000f163  00000000  00000000  00055e27  2**0
+ 17 .debug_line   0000f165  00000000  00000000  00055e27  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000a8905  00000000  00000000  00064f8a  2**0
+ 18 .debug_str    000a8905  00000000  00000000  00064f8c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  0010d88f  2**0
+ 19 .comment      0000007b  00000000  00000000  0010d891  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00005730  00000000  00000000  0010d90c  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -3457,9 +3457,8 @@ int main(void)
 	enum device {
 		Ephemerish, Payload
 	} dev_ID;
-	//dev_ID = Ephemerish;
-	dev_ID = Payload;
- 8001fe0:	2301      	movs	r3, #1
+	dev_ID = Ephemerish;
+ 8001fe0:	2300      	movs	r3, #0
  8001fe2:	77fb      	strb	r3, [r7, #31]
 	enum rocket {
 		Rail, Launch, Burnout, Apogee, Descent, Main, Recovery
@@ -3597,7 +3596,7 @@ int main(void)
  80020e2:	009b      	lsls	r3, r3, #2
  80020e4:	4413      	add	r3, r2
  80020e6:	edd3 7a00 	vldr	s15, [r3]
- 80020ea:	eebf 7a08 	vmov.f32	s14, #248	; 0xbfc00000 -1.5
+ 80020ea:	eeb8 7a04 	vmov.f32	s14, #132	; 0xc0200000 -2.5
  80020ee:	eef4 7ac7 	vcmpe.f32	s15, s14
  80020f2:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  80020f6:	d40d      	bmi.n	8002114 <main+0x184>
@@ -3606,7 +3605,7 @@ int main(void)
  80020fe:	009b      	lsls	r3, r3, #2
  8002100:	4413      	add	r3, r2
  8002102:	edd3 7a00 	vldr	s15, [r3]
- 8002106:	eeb7 7a08 	vmov.f32	s14, #120	; 0x3fc00000  1.5
+ 8002106:	eeb0 7a04 	vmov.f32	s14, #4	; 0x40200000  2.5
  800210a:	eef4 7ac7 	vcmpe.f32	s15, s14
  800210e:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  8002112:	dd04      	ble.n	800211e <main+0x18e>
@@ -4776,8 +4775,7 @@ int main(void)
 			break;
  8002ab0:	bf00      	nop
 		}
-		//if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
-		if(RF == 1 && ((time % 6) == 3 || (time % 6) == 4))	// PAYLOAD
+		if (RF == 1 && ((time % 6) == 0 || (time % 6) == 1))  	// EPHEMERISH
  8002ab2:	4b5b      	ldr	r3, [pc, #364]	; (8002c20 <main+0xc90>)
  8002ab4:	781b      	ldrb	r3, [r3, #0]
  8002ab6:	2b01      	cmp	r3, #1
@@ -4793,7 +4791,7 @@ int main(void)
  8002ace:	4413      	add	r3, r2
  8002ad0:	005b      	lsls	r3, r3, #1
  8002ad2:	1aca      	subs	r2, r1, r3
- 8002ad4:	2a03      	cmp	r2, #3
+ 8002ad4:	2a00      	cmp	r2, #0
  8002ad6:	d00e      	beq.n	8002af6 <main+0xb66>
  8002ad8:	4b52      	ldr	r3, [pc, #328]	; (8002c24 <main+0xc94>)
  8002ada:	6819      	ldr	r1, [r3, #0]
@@ -4806,7 +4804,7 @@ int main(void)
  8002aea:	4413      	add	r3, r2
  8002aec:	005b      	lsls	r3, r3, #1
  8002aee:	1aca      	subs	r2, r1, r3
- 8002af0:	2a04      	cmp	r2, #4
+ 8002af0:	2a01      	cmp	r2, #1
  8002af2:	f47f aab8 	bne.w	8002066 <main+0xd6>
 //			LORA_ADRESS[1] = SENDER_ADDL;
 //			LORA_ADRESS[2] = SENDER_CHN;
